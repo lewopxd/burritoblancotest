@@ -1182,6 +1182,18 @@ main {
   z-index: 2;
 }
 
+@media only screen and (max-device-width: 640px) {
+  #montanas_1 {
+  background-image: url("./images/paisaje2/c4_montanas1.png");
+  }
+  #montanas_2 {
+    background-image: url("./images/paisaje2/c5_montanas2.png");
+    }
+    #montanas_3 {
+      background-image: url("./images/paisaje2/c6_montanas3.png");
+      }
+}
+
 #montanas_1.mover {
   animation: moverImagenFondo_montana1 2s ease forwards;
   /* Ajusta la duración según sea necesario */
