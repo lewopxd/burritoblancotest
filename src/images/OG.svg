@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" style="fill: #35dad2;"/>
+  <ellipse cx="671.17" cy="352.36" rx="251.57" ry="259" style="fill: #99edfb;"/>
+  <g>
+    <text transform="translate(251.03 102.65) scale(1.33 1)" style="fill: #fff; font-family: GillSansMT-ExtraCondensedBold, &apos;Gill Sans MT Ext Condensed Bold&apos;; font-size: 76.65px; font-weight: 700;"><tspan x="0" y="0">Burrito</tspan></text>
+    <text transform="translate(283.77 167.87) scale(1.33 1)" style="fill: #fff; font-family: GillSansMT-ExtraCondensedBold, &apos;Gill Sans MT Ext Condensed Bold&apos;; font-size: 76.65px; font-weight: 700;"><tspan x="0" y="0">blanco</tspan></text>
+    <text transform="translate(354.34 192.83) scale(1.33 1)" style="fill: #fff; font-family: GillSansMT-ExtraCondensedBold, &apos;Gill Sans MT Ext Condensed Bold&apos;; font-size: 35.23px; font-weight: 700;"><tspan x="0" y="0">.com.co</tspan></text>
+  </g>
+  <image id="Capa_7_Imagen" data-name="Capa 7 Imagen" width="529" height="531" transform="translate(393.74 56)" xlink:href="OG1.png"/>
+  <g style="fill: none; opacity: .22;">
+    <image width="389" height="229" transform="translate(570.57 78.29)" xlink:href="OG2.png"/>
+  </g>
+  <g>
+    <polygon points="600.19 186.79 679.16 167.95 677.64 198.19 600.19 186.79" style="fill: #fff;"/>
+    <rect x="648.9" y="101.84" width="267.03" height="156.04" rx="12" ry="12" style="fill: #fff;"/>
+  </g>
+  <text id="Hola_Soy_el_burrito_blanco._Descubre_más_sorpresas_aqui_en_mi" data-name="Hola! Soy el burrito blanco. Descubre más sorpresas aqui en mi" transform="translate(671.17 140.6) scale(1.14 1)" style="font-size: 24px;"><tspan style="font-family: AgencyFB-Bold, &apos;Agency FB&apos;; font-weight: 700;"><tspan x="0" y="0">Hola!</tspan></tspan><tspan style="font-family: AgencyFB-Reg, &apos;Agency FB&apos;;"><tspan x="0" y="28.8">Soy el burrito blanco.</tspan></tspan><tspan style="font-family: AgencyFB-Reg, &apos;Agency FB&apos;;"><tspan x="0" y="57.59">Descubre más sorpresas</tspan></tspan><tspan style="font-family: AgencyFB-Reg, &apos;Agency FB&apos;;"><tspan x="0" y="86.39">aqui en mi sitio web.</tspan></tspan></text>
+</svg>

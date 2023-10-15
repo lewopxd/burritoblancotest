@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Burrito Blanco</title>
+  <link  href='https://host-j.netlify.app/font.css'><link rel="stylesheet" href="./style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="preloader">  
+  <div id = "preloader-container">
+    <div class="circle-loader"></div>
+    <div class="circle-loader"></div>
+    <div class="circle-loader"></div>
+    <div class="shadow-loader"></div>
+    <div class="shadow-loader"></div>
+    <div class="shadow-loader"></div>
+    <span>Cargando</span>
+  </div>
+</div>
+
+
+
+
+
+ <!-- Contenido de tu página -->
+ <div id="content" style="display: none;">
+  <!-- Tu contenido aquí -->
+
+ 
+
+<button class="button-audio muted" id="button-audio" title="Muted"></button>
+<div id="audio-signal">
+  <p class="active-audio"><span>Activa la música</span></p>
+  <p class="copy"><br> </p>
+</div>
+<audio id="music" controls src="./music/Borriquito_Instrumental.mp3"></audio>
+<button class="button-full" id="button-full" title="Full screen"></button>
+
+ 
+
+<main>
+  <div id="cielo">
+    <div id="sol"></div>
+
+    <div id="fondo_nubes"></div>
+    <div id="nube1"></div>
+    <div id="nube2"></div>
+   <div id="nube1b"></div>
+   <div id="nube1bb"></div>
+
+   <div id="nube1c"></div>
+   <div id="nube1cc"></div>
+
+   <div id="montanas_1"></div>
+   <div id="montanas_2"></div>
+   <div id="montanas_3"></div>
+
+   <div id="burrito1-container">
+   <div id="burrito1"></div>
+  </div>
+   <div id="contenedor-titulo">
+    <p id="nuevo-titulo">El Burrito Blanco</p>
+    <p id="nuevo-subtitulo">La grandeza de lo sencillo</p>
+    <p id="nuevo-autorTitulo">Luis Tablanca</p>
+  </div>
+
+  </div>
+  
+ 
+
+
+  <div class="text-container">
+    <div class="intro">
+      <p class="name">El Burrito Blanco</p>
+      <P class="title">La grandeza de lo sencillo</P>
+      <p class="title2">Luis Tablanca</p>
+    </div>
+  </div>
+  
+    
+ 
+
+   
+</main>
+ 
+<div class="contenedor-delante">
+   
+
+  <div class="contenedor" id="contenedorItems">
+    <div id= "item1" class="linea" onclick="click_item_1()">¿Quién soy?</div>
+    <div id= "item2" class="linea" onclick="click_item_2()">Aula de Aventuras</div>
+    <div id= "item3"class="linea" onclick="click_item_3()">Rincones del mundo</div>
+    <div id= "item4"class="linea" onclick="click_item_4()">Mi música</div>
+    <div id= "item5"class="linea" onclick="click_item_5()">Luis Tablanca</div>
+  </div>
+</div>
+
+
+<!-- fin contenido -->
+</div>
+
+<!-- partial -->
+  </script><script  src="./script.js"></script>
+
+</body>
+</html>
