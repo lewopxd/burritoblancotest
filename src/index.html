@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Burrito Blanco</title>
-  <link  href='https://host-j.netlify.app/font.css'><link rel="stylesheet" href="./style.css">
-  
+  <link  href='https://host-j.netlify.app/font.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./urls.css"> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
@@ -46,8 +47,11 @@
 
  
 
+<div class="contenedor-detras">
 <main>
+  <div id="contenedor-fondo">
   <div id="cielo">
+    <div id="cielo2"></div>
     <div id="sol"></div>
 
     <div id="fondo_nubes"></div>
@@ -62,15 +66,12 @@
    <div id="montanas_1"></div>
    <div id="montanas_2"></div>
    <div id="montanas_3"></div>
-
+  </div>
+  
    <div id="burrito1-container">
    <div id="burrito1"></div>
   </div>
-   <div id="contenedor-titulo">
-    <p id="nuevo-titulo">El Burrito Blanco</p>
-    <p id="nuevo-subtitulo">La grandeza de lo sencillo</p>
-    <p id="nuevo-autorTitulo">Luis Tablanca</p>
-  </div>
+   
 
   </div>
   
@@ -90,16 +91,28 @@
 
    
 </main>
- 
-<div class="contenedor-delante">
-   
 
-  <div class="contenedor" id="contenedorItems">
+</div>
+
+
+<div id=" ">
+<div class="contenedor-delante" id="contenedor-delante">
+  
+  <div id="contenedor-titulo">
+    <p id="nuevo-titulo">El Burrito Blanco</p>
+    <p id="nuevo-subtitulo">La grandeza de lo sencillo</p>
+    <p id="nuevo-autorTitulo">Luis Tablanca</p>
+  </div>
+
+  <div class="contenedor" id="contenedorItems0">
+    <div  id="contenedorItems">
     <div id= "item1" class="linea" onclick="click_item_1()">¿Quién soy?</div>
     <div id= "item2" class="linea" onclick="click_item_2()">Aula de Aventuras</div>
     <div id= "item3"class="linea" onclick="click_item_3()">Rincones del mundo</div>
     <div id= "item4"class="linea" onclick="click_item_4()">Mi música</div>
     <div id= "item5"class="linea" onclick="click_item_5()">Luis Tablanca</div>
+    </div>
+  </div>
   </div>
 </div>
 

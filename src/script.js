@@ -59,17 +59,34 @@ buttonFullScreen.addEventListener("click", () => {
   buttonFullScreen.classList[!isActive ? "add" : "remove"]("full");
 });
 
+/*
+ 
+screen.orientation.addEventListener("change", function(e) {
+  // Do something on change
+  
+  if(!is_firstClick){
+movem();
+  }
+});
 
-// Funciones de los botones del menu
 
 
+visualViewport.addEventListener("resize", () => {
+  if(!is_firstClick){
+    movem();
+      }
+});
+*/
 
-
-
-
-
-
-
+window.addEventListener("resize", reportWindowSize);
+function reportWindowSize() {
+  const t = document.getElementById("nuevo-titulo");
+  if (window.innerWidth <= 640) {
+    t.innerText = ("El Burrito Blanco");
+  } else {
+    t.innerText = ("El Burrito\nBlanco");
+  }
+}
 
 function cambiarSubrayado(elementoClicado) {
   const textos = document.querySelectorAll('.linea');
@@ -129,8 +146,11 @@ function click_item_5() {
 }
 
 function manageIndex(index){
+  if(is_firstClick){
   movem();
-  
+  is_firstClick = false;
+  }
+ 
   
   console.log("item: "+index_item+"   last: "+last_index_item);
   console.log( Math.abs(100*(index_item-last_index_item)) + "vw");
@@ -152,8 +172,8 @@ function manageIndex(index){
 
 
 function movem() {
-  if (is_firstClick) {
-    is_firstClick = false;
+   
+   
     const elemento = document.getElementById('contenedorItems');
     const distanciaAlBordeSuperior = -1 * elemento.getBoundingClientRect().top;
     const distanciaAlBordeIzquierdo = -1 * elemento.getBoundingClientRect().left;
@@ -162,6 +182,8 @@ function movem() {
     elemento.style.setProperty('--distanciaY', `${distanciaAlBordeSuperior}px`);
     elemento.classList.add('animado');
 
+    const contenedordelante = document.getElementById('contenedor-delante');
+    contenedordelante.classList.add('animadox');
 
     const elementos_linea = document.querySelectorAll('.linea');
 
@@ -175,6 +197,9 @@ function movem() {
     nuevoTit.classList.add("animado");
 
 
+    const nuevoTitex = document.getElementById("nuevo-titulo");
+    nuevoTitex.classList.add("animado");
+
     const t = document.getElementById("nuevo-titulo");
     const st = document.getElementById("nuevo-subtitulo");
     const at = document.getElementById("nuevo-autorTitulo");
@@ -183,7 +208,7 @@ function movem() {
     at.remove();
 
     if (window.innerWidth <= 640) {
-       
+      t.innerText = ("El Burrito Blanco");
     } else {
       t.innerText = ("El Burrito\nBlanco");
     }
@@ -195,9 +220,7 @@ function movem() {
 
  
 
-  } else {
-    
-  }
+  
 }
 
 function moverMontana() {
@@ -274,3 +297,6 @@ function moverMontana_der() {
   currentPosition1 += Math.abs(25*(index_item-last_index_item));
 
 }
+
+
+
