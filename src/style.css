@@ -33,14 +33,17 @@
 
 
 body {
-  height: 100vh;
-  width: 100%;
+ 
   margin: 0;
   overflow: hidden;
   font-size: 1.05vw;
   font-family: "Liu Jian Mao Cao", cursive;
   color: #045968;
   background: var(--background-color);
+  padding: 0;
+  /*padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);*/
+box-sizing: border-box;
+ 
 }
 
 
@@ -68,7 +71,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
   height: 100vh;
+  width: 100vw;
   /* Ocupa toda la altura de la pantalla */
   background-color: #0591aa;
   /* Cambia el color de fondo según tu preferencia */
@@ -77,9 +82,9 @@ body {
 #preloader-container {
   width: 200px;
   position: absolute;
-  top: 35%;
-  left: 40%;
+  
   align-items: center;
+  
 
 
 }

@@ -81,11 +81,15 @@ visualViewport.addEventListener("resize", () => {
 window.addEventListener("resize", reportWindowSize);
 function reportWindowSize() {
   const t = document.getElementById("nuevo-titulo");
+
+  if(!is_firstClick){
   if (window.innerWidth <= 640) {
     t.innerText = ("El Burrito Blanco");
   } else {
     t.innerText = ("El Burrito\nBlanco");
+  
   }
+}
 }
 
 function cambiarSubrayado(elementoClicado) {
