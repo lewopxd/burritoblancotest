@@ -33,7 +33,7 @@
 
 
 body {
- 
+
   margin: 0;
   overflow: hidden;
   font-size: 1.05vw;
@@ -42,8 +42,8 @@ body {
   background: var(--background-color);
   padding: 0;
   /*padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);*/
-box-sizing: border-box;
- 
+  box-sizing: border-box;
+
 }
 
 
@@ -71,7 +71,7 @@ box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   height: 100vh;
   width: 100vw;
   /* Ocupa toda la altura de la pantalla */
@@ -82,9 +82,9 @@ box-sizing: border-box;
 #preloader-container {
   width: 200px;
   position: absolute;
-  
+
   align-items: center;
-  
+
 
 
 }
@@ -408,8 +408,7 @@ main {
   }
 }
 
-
-
+/*------------------------------------------------------------ >>>>>>         mobile*/
 @media only screen and (max-device-width: 640px) {
   #contenedor-delante2 {
     width: 100vw;
@@ -417,42 +416,108 @@ main {
     background-color: #f3101000;
     position: fixed;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     top: 0;
     z-index: 2;
     opacity: 1;
+
   }
-  
-  #contenedor-delante {
-    top:0;
-    background-color: rgba(255, 0, 140, 0);
-    z-index: 2;
-    
-    width: 100vw; /* Ancho automático para ajustarse al contenido */
-    height: auto; /* Altura automática para ajustarse al contenido */
+
+  #contenedor-delante3 {
+    width: auto;
+    height: auto;
+    background-color: #00094000;
+    border-color: #0591aa00;
+    border-width: 2px;
+    position: fixed;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: nowrap;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    top: 0;
+    z-index: 2;
+
     flex-direction: column;
     opacity: 0;
-
-
-    position: absolute;
-    top: 10%; 
   }
-  
+
+
+
+  #contenedor-principal {
+    background-color: rgba(251, 255, 0, 0);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #contenedor-principal2 {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    background-color: rgba(0, 0, 0, 0);
+    width: 98%;
+    height: 73vh;
+    z-index: 2;
+    display: flex;
+    position: relative;
+
+  }
+
+  #pagina1 {
+
+    background-color: rgba(231, 231, 231, 0);
+    width: calc(100% - 10px);
+    ;
+    height: calc(100% - 10px);
+    z-index: 2;
+    display: flex;
+    position: relative;
+    margin: 5px;
+
+  }
+
+
+
+  #contenedor-delante {
+    position: relative;
+    top: 0;
+    background-color: rgba(255, 0, 140, 0);
+    z-index: 2;
+    width: 100vw;
+    /* Ancho automático para ajustarse al contenido */
+    height: auto;
+    /* Altura automática para ajustarse al contenido */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+
+
+
+
+
+  }
+
   @keyframes moverContenedor-delante {
-    from{
-     
-       
-    }
-    to{
-      
-     
-       
-       top: 0;
+    from {}
+
+    to {
+
+
+
+      top: 0;
     }
   }
 
@@ -460,101 +525,100 @@ main {
   #contenedor-delante.animadox {
     opacity: 1;
     flex-direction: column;
-       
-    justify-content:  left;
-    
-     align-items: flex-start;
 
-    animation:  moverContenedor-delante  0.5s ease forwards;
-    
+    justify-content: left;
+
+    align-items: flex-start;
+
+    animation: moverContenedor-delante 0.5s ease forwards;
+
   }
+
   #contenedor-titulo {
-    display: flex;  
+    display: flex;
     flex-direction: column;
-    
-background-color: #fdae1a00;
+
+    background-color: #fdae1a00;
     border: 1px solid rgba(140, 255, 52, 0);
     /* Solo para visualizar el contenedor */
     padding: 20px;
     /* Añade un poco de espacio alrededor del contenido */
     opacity: 0;
-  
-    margin-bottom: 20px;
+
+    margin-bottom: 1vh;
     /* Centrar horizontalmente */
-     
+
     width: auto;
     height: auto;
-    
+
     letter-spacing: 0.5vw;
     white-space: nowrap;
-    
+
     animation: fadeInTit 0.5s 7s forwards;
- 
+
     z-index: 2;
   }
-  
+
   @keyframes fadeInTit {
     from {
       opacity: 0;
       /* Opacidad inicial: 0 */
     }
-  
+
     to {
       opacity: 1;
       /* Opacidad final: 1 */
     }
   }
-  
+
   @keyframes newTitAnim {
 
-    0% {
-      
-       
-  
-    }
-  
+    0% {}
+
     100% {
       padding-top: 0px;
-      margin-top: 6px;
+      margin-top: 0px;
       padding-bottom: 0%;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
+
     }
   }
+
   #contenedor-titulo.animado {
-    
+
     opacity: 1;
     animation: newTitAnim 0.5s forwards;
   }
+
   #nuevo-titulo {
-    font-size: 8.5vw;
+    font-size: 40px;
     text-align: center;
     /* Alinea el texto a la derecha dentro del contenedor */
     letter-spacing: 0.3vw;
     white-space: nowrap;
     color: #ffffff;
+
   }
+
   @keyframes newTitAnimex {
 
-    0% {
-      
-      
- 
-    }
-  
+    0% {}
+
     100% {
-      font-size: 5vw;
-       
+      font-size: 15px;
+      margin-top: 5px;
     }
   }
+
   #nuevo-titulo.animado {
-    
-   
-   animation: newTitAnimex 0.5s forwards;
+
+
+    animation: newTitAnimex 0.5s forwards;
   }
 
 
   #nuevo-subtitulo {
-    font-size: 5.5vw;
+    font-size: 23px;
     text-align: center;
     /* Alinea el texto a la derecha dentro del contenedor */
     letter-spacing: 0.3vw;
@@ -563,59 +627,108 @@ background-color: #fdae1a00;
   }
 
   #nuevo-autorTitulo {
-    font-size: 3.5vw;
+    font-size: 15px;
     text-align: right;
     /* Alinea el texto a la derecha dentro del contenedor */
     color: #ffffff;
   }
 
   #contenedorItems0 {
-    width: calc(100vw - 20px);
+    width: calc(100% + 1vw);
     height: auto;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 123, 0, 0);
     display: flex;
     justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 0;
+    margin-left: -1vw;
+
+    margin-top: 5vw;
+
+
+
+  }
+
+  @keyframes moverItems0 {
+    from {
+      margin-top: 30px;
+    }
+
+    to {
+      margin-top: 10px;
 
     }
-      #contenedorItems {
-         
-   
+  }
+
+  #contenedorItems0.animate {
+    animation: moverItems0 1s ease forwards;
+    /* Nombre de la animación, duración y función de temporización */
+  }
+
+  #conthandler {
+    background-color: #ffffff00;
+    width: 1vw;
+    height: auto;
+
+
+  }
+
+
+  #c-text-handler {
+    font-size: 1.9vvw;
+
+    scale: (1.2);
+    user-select: none;
+    color: transparent;
+  }
+
+  #contenedorItems {
+
     display: flex;
- 
+
     justify-content: space-around;
     align-items: center;
+
     flex-direction: column;
     /* Para alinear horizontalmente */
-    margin-left: 10px; /* Margen izquierdo de 100px */
-    margin-right: 10px; /* Margen derecho de 5px */
-    width: calc(100vw - 20px); /* Resta el margen izquierdo y el margen derecho al 100% */
-    
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    height: auto;
     /* Ocupar todo el ancho disponible */
-    background-color: rgba(9, 255, 0, 0);
+    background-color: rgba(0, 99, 141, 0);
+    border-color: #ffffff00;
+    border-width: 1px;
+    border-style: solid; 
+    border-radius: 7vw;
     z-index: 2;
 
+  }
+
+   
+
+  #contenedorItems.animatebg{
+    background-color: rgba(0, 99, 141, 0.459); /* Fondo con color */
+    border-color: #ffffff; /* Borde con color */
+    animation: fadeInBackground-ci 0.5s ease forwards;
   }
 
   /* Definición de keyframes */
   @keyframes moverElemento {
     0% {
-     /* transform: translate(calc (var(--distanciaX)*-1), calc (var(--distanciaY)*-1));*/
+      /* transform: translate(calc (var(--distanciaX)*-1), calc (var(--distanciaY)*-1));*/
 
     }
 
     100% {
-     /* transform: translate(calc(var(--distanciaX)), calc(var(--distanciaY)));*/
-     /* margin-left: 38vw;*/
-     /* margin-right: 2rem;*/
-     /* margin-top: 0;*/
+      /* transform: translate(calc(var(--distanciaX)), calc(var(--distanciaY)));*/
+      /* margin-left: 38vw;*/
+      /* margin-right: 2rem;*/
+      /* margin-top: 0;*/
       color: #034a68;
-      margin-left: 0px;
-      margin-right: 0px;
+      margin-left: 1vw;
+      margin-right: 1vw;
       margin-top: 0;
-      margin-bottom: 0;
-      padding: 0;
+
 
     }
   }
@@ -623,35 +736,50 @@ background-color: #fdae1a00;
   /* Aplicación de la animación */
   #contenedorItems.animado {
     flex-direction: row;
+    width: calc(100% - 2vw);
     animation: moverElemento 0.1s ease forwards;
-    height: auto;
-    
+
   }
 
 
 
+  #contenedorItems0-titulos {
+    background-color: #0591aa00;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 
+  #tit-0 {
+    background-color: #fdae1a00;
+    justify-content: center;
+    font-size: 8vw;
+    color: #fff;
+    font-family: 'Caveat', cursive;
+
+
+  }
 
   .linea {
-    padding: 0px;
-    border: 1px solid #ffffff00;
-    font-size: 6.8vw;
-    
+    padding: 10px;
+    border: 1px solid #034a5700;
+    font-size: 7vw;
+    margin: 1px;
     margin-right: 0px;
-    margin-bottom: 40px;
     text-align: center;
     cursor: pointer;
     user-select: none;
+    pointer-events: auto;
     position: relative;
     white-space: pre-wrap;
     letter-spacing: 0.01em
   }
 
   .linea:last-child {
-    margin-right: 0;
+    /*margin-right: 0;*/
   }
 
- 
+
 
   .linea.subrayado {
     text-decoration: underline;
@@ -662,59 +790,59 @@ background-color: #fdae1a00;
 
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* Efecto de rebote */
-    transition: letter-spacing 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
- 
-    
+    transform-origin: center;
+
+
 
   }
- 
+
 
   .linea:hover {
-    transform: scale(1.123);
+    transform: scale(1.2);
     /* Escala el texto al pasar el mouse */
-   letter-spacing: 0.15em;
-    /* Cambia el espaciado entre letras al pasar el mouse */
-    color: white;
-    
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Restablece la transición al tamaño normal al final de la animación */
+
+    color: #ffffff;
   }
- 
+
 
   .linea:active {
     transform: scale(1.2);
     /* Escala el texto al pasar el mouse */
-    letter-spacing: 0.15em;
+
     /* Cambia el espaciado entre letras al pasar el mouse */
     color: #077bbe;
   }
 
   @keyframes cambiarTamanioTexto {
     from {
-       
+      font-size: 7vw;
     }
 
     to {
-      font-size: 5vw;
-      margin-bottom: 0;
-      margin-left: 4px;
+      font-size: 4.5vw;
+
     }
   }
 
   .linea.animado {
+
     animation: cambiarTamanioTexto 0.3s forwards;
     /* Aplicación de la animación */
   }
 
+  .linea img {
+
+    width: calc((100vw / 5) - 9vw);
+    height: calc((100vw / 5) - 9vw);
+    display: none;
+  }
+
 }
 
-.contenedor-detras {
 
-  padding: 0px;
-  position: relative;
-  z-index: 0;
-  /* Z-index menor para que esté detrás */
-}
-
-/* BIG SCREEN*/
+/*-----------------------------------------------------------------><>>> BIG SCREEN*/
 
 
 @media only screen and (min-device-width: 641px) {
@@ -724,41 +852,105 @@ background-color: #fdae1a00;
     background-color: #f3101000;
     position: fixed;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     top: 0;
     z-index: 2;
     opacity: 1;
+
   }
-  
-  #contenedor-delante {
-    top:0;
-    background-color: rgba(255, 0, 140, 0);
-    z-index: 2;
-    width: auto; /* Ancho automático para ajustarse al contenido */
-    height: auto; /* Altura automática para ajustarse al contenido */
+
+  #contenedor-delante3 {
+    width: auto;
+    height: auto;
+    background-color: #00094000;
+    border-color: #0591aa00;
+    border-width: 2px;
+    position: fixed;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: nowrap;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    top: 0;
+    z-index: 2;
+
     flex-direction: column;
     opacity: 0;
-
-
-    position: absolute;
-    top: 10%;
   }
-  
+
+  #contenedor-principal {
+    background-color: rgba(251, 255, 0, 0);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #contenedor-principal2 {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    background-color: rgba(0, 0, 0, 0);
+    width: 60%;
+    height: 75vh;
+    z-index: 2;
+    display: flex;
+    position: relative;
+
+  }
+
+  #pagina1 {
+
+    background-color: rgba(231, 231, 231, 0.306);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    z-index: 2;
+    display: flex;
+    position: relative;
+    margin: 5px;
+
+  }
+
+
+
+  #contenedor-delante {
+    position: relative;
+    top: 0;
+    background-color: rgba(255, 0, 140, 0);
+    z-index: 2;
+    width: 100vw;
+    /* Ancho automático para ajustarse al contenido */
+    height: auto;
+    /* Altura automática para ajustarse al contenido */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+
+
+
+    top: 10%;
+
+  }
+
   @keyframes moverContenedor-delante {
-    from{
-     
-       
-    }
-    to{
-      
-     
-       
-       top: 0;
+    from {}
+
+    to {
+
+
+
+      top: 0;
     }
   }
 
@@ -766,71 +958,70 @@ background-color: #fdae1a00;
   #contenedor-delante.animadox {
     opacity: 1;
     flex-direction: row;
-       
-    justify-content:  left;
-    
-     align-items: flex-start;
 
-    animation:  moverContenedor-delante  0.5s ease forwards;
-    
+    justify-content: left;
+
+    align-items: flex-start;
+
+    animation: moverContenedor-delante 0.5s ease forwards;
+
   }
+
   #contenedor-titulo {
-    display: flex;  
+    display: flex;
     flex-direction: column;
-    
-background-color: #fdae1a00;
+
+    background-color: #fdae1a00;
     border: 1px solid rgba(140, 255, 52, 0);
     /* Solo para visualizar el contenedor */
     padding: 20px;
     /* Añade un poco de espacio alrededor del contenido */
     opacity: 0;
-  
+
     margin-bottom: 1vh;
     /* Centrar horizontalmente */
-     
+
     width: auto;
     height: auto;
-    
+
     letter-spacing: 0.5vw;
     white-space: nowrap;
-    
+
     animation: fadeInTit 0.5s 7s forwards;
- 
+
     z-index: 2;
   }
-  
+
   @keyframes fadeInTit {
     from {
       opacity: 0;
       /* Opacidad inicial: 0 */
     }
-  
+
     to {
       opacity: 1;
       /* Opacidad final: 1 */
     }
   }
-  
+
   @keyframes newTitAnim {
 
-    0% {
-      
-       
-  
-    }
-  
+    0% {}
+
     100% {
       padding-top: 0px;
       margin-top: 10px;
       padding-bottom: 0%;
-      
+
     }
   }
+
   #contenedor-titulo.animado {
-    
+
     opacity: 1;
     animation: newTitAnim 0.5s forwards;
   }
+
   #nuevo-titulo {
     font-size: 4.5vw;
     text-align: center;
@@ -838,24 +1029,23 @@ background-color: #fdae1a00;
     letter-spacing: 0.3vw;
     white-space: nowrap;
     color: #ffffff;
+
   }
+
   @keyframes newTitAnimex {
 
-    0% {
-      
-      
- 
-    }
-  
+    0% {}
+
     100% {
       font-size: 2vw;
-       
+
     }
   }
+
   #nuevo-titulo.animado {
-    
-   
-   animation: newTitAnimex 0.5s forwards;
+
+
+    animation: newTitAnimex 0.5s forwards;
   }
 
 
@@ -883,12 +1073,32 @@ background-color: #fdae1a00;
     justify-content: center;
     margin-right: 1vw;
     margin-left: 1vw;
-    }
-      #contenedorItems {
+
+
+  }
+
+  #conthandler {
+    background-color: #ffffff00;
+    width: 1vw;
+    height: auto;
+
+
+  }
+
+
+  #c-text-handler {
+    font-size: 1.9vvw;
+
+    scale: (1.2);
+    user-select: none;
+    color: transparent;
+  }
+
+  #contenedorItems {
     --distanciaY: 0;
     --distanciaX: 0;
     display: flex;
- 
+
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
@@ -906,29 +1116,30 @@ background-color: #fdae1a00;
   /* Definición de keyframes */
   @keyframes moverElemento {
     0% {
-     /* transform: translate(calc (var(--distanciaX)*-1), calc (var(--distanciaY)*-1));*/
+      /* transform: translate(calc (var(--distanciaX)*-1), calc (var(--distanciaY)*-1));*/
 
     }
 
     100% {
-     /* transform: translate(calc(var(--distanciaX)), calc(var(--distanciaY)));*/
-     /* margin-left: 38vw;*/
-     /* margin-right: 2rem;*/
-     /* margin-top: 0;*/
+      /* transform: translate(calc(var(--distanciaX)), calc(var(--distanciaY)));*/
+      /* margin-left: 38vw;*/
+      /* margin-right: 2rem;*/
+      /* margin-top: 0;*/
       color: #034a68;
       margin-left: 1vw;
       margin-right: 1vw;
       margin-top: 0;
-     
+
 
     }
   }
 
   /* Aplicación de la animación */
   #contenedorItems.animado {
+
     width: calc(100% - 2vw);
     animation: moverElemento 0.1s ease forwards;
-    
+
   }
 
 
@@ -937,23 +1148,24 @@ background-color: #fdae1a00;
 
   .linea {
     padding: 10px;
-    border: 1px solid #00000000;
+    border: 1px solid #2ffa4000;
     font-size: 2.8vw;
     margin: 1px;
     margin-right: 40px;
     text-align: center;
     cursor: pointer;
     user-select: none;
+    pointer-events: auto;
     position: relative;
     white-space: pre-wrap;
     letter-spacing: 0.01em
   }
 
   .linea:last-child {
-    margin-right: 0;
+    /*margin-right: 0;*/
   }
 
- 
+
 
   .linea.subrayado {
     text-decoration: underline;
@@ -965,20 +1177,20 @@ background-color: #fdae1a00;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* Efecto de rebote */
     transition: letter-spacing 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
- 
-    
+
+
 
   }
- 
+
 
   .linea:hover {
     transform: scale(1.2);
     /* Escala el texto al pasar el mouse */
-   letter-spacing: 0.15em;
+    letter-spacing: 0.15em;
     /* Cambia el espaciado entre letras al pasar el mouse */
-    
+
   }
- 
+
 
   .linea:active {
     transform: scale(1.2);
@@ -994,25 +1206,61 @@ background-color: #fdae1a00;
     }
 
     to {
-      font-size: 2.3vw;
+      font-size: 1.9vw;
     }
   }
 
   .linea.animado {
+
     animation: cambiarTamanioTexto 0.3s forwards;
     /* Aplicación de la animación */
+  }
+
+  .linea img {
+
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  #contenedorItems0-titulos {
+    display: none;
   }
 
 }
 
 
-/* Estilos para el contenedor que aparecerá después de 2 segundos */
-.contenedor-delante {
-  /* Resto de estilos ... */
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
 
-  /* Ocultar inicialmente */
-  opacity: 0;
+
+
+.linea {
+  animation: aparecerlin 0.5s ease-in-out forwards 7s;
 }
+
+@keyframes aparecerlin {
+
+  0% {
+    pointer-events: none;
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: auto;
+
+  }
+}
+
+.linea::after {
+  pointer-events: auto;
+}
+
+/* Estilos para el contenedor que aparecerá después de 2 segundos */
+
 
 /* Animación para mostrar el contenedor */
 @keyframes aparecer {
@@ -1029,23 +1277,50 @@ background-color: #fdae1a00;
 }
 
 /* Aplicar la animación al contenedor */
-.contenedor-delante {
+#contenedor-delante3 {
   /* Resto de estilos ... */
 
-  /* Aplicar la animación después de 2 segundos */
+  /* Aplicar la animación después de x segundos */
   animation: aparecer 0.5s ease-in-out forwards 7s;
 }
 
+
+
 .linea {
   font-family: 'Caveat', cursive;
+  pointer-events: none;
 }
+
+
+
+#contenedor-principal2 {
+  display: none;
+  opacity: 0;
+}
+
+#contenedor-principal2.aparecerp2 {
+
+  animation: aparecerp2 3s ease forwards;
+}
+
+@keyframes aparecerp2 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 .text-container {
   position: absolute;
   left: 50%;
   top: 40%;
   z-index: var(--text-index);
-  pointer-events: none;
+
   animation: bounce-text 6000ms ease-in-out infinite alternate;
 }
 
@@ -1186,8 +1461,8 @@ background-color: #fdae1a00;
 @media only screen and (max-device-width: 640px) {
 
   #contenedor-fondo {
-   
-     
+
+
     height: 100vh;
     width: 100%;
     margin: 0;
@@ -1203,9 +1478,10 @@ background-color: #fdae1a00;
     position: relative;
     overflow: hidden;
   }
-  
-  #cielo::before, #cielo::after {
-    
+
+  #cielo::before,
+  #cielo::after {
+
     content: "";
     position: absolute;
     top: 0;
@@ -1216,24 +1492,25 @@ background-color: #fdae1a00;
     background-repeat: repeat-x;
     animation: moveBackground 15s linear infinite;
   }
-  
+
   #cielo::before {
     left: 0;
   }
-  
+
   #cielo::after {
     left: 100%;
   }
-  
+
   @keyframes moveBackground {
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-100%);
     }
   }
-  
+
 
 }
 
@@ -1241,253 +1518,253 @@ background-color: #fdae1a00;
 /*    pantalla grande       */
 @media only screen and (min-device-width: 641px) {
 
-#contenedor-fondo {
- 
-   
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  
-}
+  #contenedor-fondo {
 
-#cielo {
-  width: 100%;
-  height: 100vh;
 
-  background-repeat: no-repeat;
-  background-image: var(--bg-cielo);
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-}
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
 
-#nube1 {
-  background-image: var(--bg-nube-nueva);
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 58%;
-  /* Posición vertical centrada */
-  left: 50%;
-  /* Posición inicial centrada */
-  transform: translate(-50%, -50%);
-  animation: mover_nube1 50s forwards;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
+  }
 
-}
+  #cielo {
+    width: 100%;
+    height: 100vh;
 
-@keyframes mover_nube1 {
-  0% {
+    background-repeat: no-repeat;
+    background-image: var(--bg-cielo);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+  }
+
+  #nube1 {
+    background-image: var(--bg-nube-nueva);
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 58%;
+    /* Posición vertical centrada */
     left: 50%;
-    /* Comienza desde el centro de la pantalla */
+    /* Posición inicial centrada */
+    transform: translate(-50%, -50%);
+    animation: mover_nube1 50s forwards;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+
   }
 
-  100% {
-    left: -50%;
-    /* Llega a -10% (fuera de la pantalla a la izquierda) */
-  }
-}
+  @keyframes mover_nube1 {
+    0% {
+      left: 50%;
+      /* Comienza desde el centro de la pantalla */
+    }
 
-
-
-#nube1b {
-  background-image:var(--bg-nube-nueva);
-
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 20%;
-  /* Posición vertical centrada */
-  left: 50%;
-  /* Posición inicial centrada */
-  transform: translate(-50%, -50%);
-  animation: mover_nube1b 45s linear infinite;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
-
-}
-
-#nube1bb {
-  background-image: var(--bg-nube-nueva);
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 23%;
-  /* Posición vertical centrada */
-  left: 55%;
-  /* Posición inicial centrada */
-  transform: translate(-48%, -50%);
-  animation: mover_nube1b 45s linear infinite;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
-
-}
-
-
-@keyframes mover_nube1b {
-  0% {
-    left: 120%;
-    /* Comienza fuera de la pantalla en la derecha */
+    100% {
+      left: -50%;
+      /* Llega a -10% (fuera de la pantalla a la izquierda) */
+    }
   }
 
-  100% {
-    left: -30%;
-    /* Llega a 1 cm antes de salir de la pantalla en la izquierda */
-  }
-}
 
-#nube1 {
-  background-image: var(--bg-nube-nueva);
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 58%;
-  /* Posición vertical centrada */
-  left: 50%;
-  /* Posición inicial centrada */
-  transform: translate(-50%, -50%);
-  animation: mover_nube1 35s linear forwards;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
 
-}
+  #nube1b {
+    background-image: var(--bg-nube-nueva);
 
-@keyframes mover_nube1 {
-  0% {
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 20%;
+    /* Posición vertical centrada */
     left: 50%;
-    /* Comienza desde el centro de la pantalla */
+    /* Posición inicial centrada */
+    transform: translate(-50%, -50%);
+    animation: mover_nube1b 45s linear infinite;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+
   }
 
-  100% {
-    left: -50%;
-    /* Llega a -10% (fuera de la pantalla a la izquierda) */
+  #nube1bb {
+    background-image: var(--bg-nube-nueva);
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 23%;
+    /* Posición vertical centrada */
+    left: 55%;
+    /* Posición inicial centrada */
+    transform: translate(-48%, -50%);
+    animation: mover_nube1b 45s linear infinite;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+
   }
-}
 
-#nube2 {
-  background-image: var(--bg-nube-nueva);
 
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 58%;
-  /* Posición vertical centrada */
-  left: 110%;
-  /* Posición inicial centrada */
-  transform: translate(-50%, -50%);
-  animation: mover_nube2 40s linear infinite;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
-  animation-delay: 10s;
-}
+  @keyframes mover_nube1b {
+    0% {
+      left: 120%;
+      /* Comienza fuera de la pantalla en la derecha */
+    }
 
-@keyframes mover_nube2 {
-  0% {
+    100% {
+      left: -30%;
+      /* Llega a 1 cm antes de salir de la pantalla en la izquierda */
+    }
+  }
+
+  #nube1 {
+    background-image: var(--bg-nube-nueva);
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 58%;
+    /* Posición vertical centrada */
+    left: 50%;
+    /* Posición inicial centrada */
+    transform: translate(-50%, -50%);
+    animation: mover_nube1 35s linear forwards;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+
+  }
+
+  @keyframes mover_nube1 {
+    0% {
+      left: 50%;
+      /* Comienza desde el centro de la pantalla */
+    }
+
+    100% {
+      left: -50%;
+      /* Llega a -10% (fuera de la pantalla a la izquierda) */
+    }
+  }
+
+  #nube2 {
+    background-image: var(--bg-nube-nueva);
+
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 58%;
+    /* Posición vertical centrada */
     left: 110%;
+    /* Posición inicial centrada */
+    transform: translate(-50%, -50%);
+    animation: mover_nube2 40s linear infinite;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+    animation-delay: 10s;
   }
 
-  100% {
-    left: -10%;
-    /* Llega a -10% (fuera de la pantalla a la izquierda) */
+  @keyframes mover_nube2 {
+    0% {
+      left: 110%;
+    }
+
+    100% {
+      left: -10%;
+      /* Llega a -10% (fuera de la pantalla a la izquierda) */
+    }
   }
-}
 
-#nube1c {
-  background-image: var(--bg-nube-nueva);
+  #nube1c {
+    background-image: var(--bg-nube-nueva);
 
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 30%;
-  /* Posición vertical centrada */
-  left: 120%;
-  /* Posición inicial centrada */
-  transform: translate(-50%, -50%);
-  animation: mover_nube1c 45s linear infinite;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
-  animation-delay: 20s;
-}
-
-#nube1cc {
-  background-image: var(--bg-nube-nueva);
-
-  background-repeat: no-repeat;
-  /* No repetir la imagen */
-  background-position: center;
-  /* Centrar la imagen */
-  width: 100%;
-  /* Ancho del div igual al ancho de la imagen */
-  height: 100%;
-  /* Altura del div igual a la altura de la imagen */
-  position: absolute;
-  top: 33%;
-  /* Posición vertical centrada */
-  left: 120%;
-  /* Posición inicial centrada */
-  transform: translate(-48%, -50%);
-  animation: mover_nube1c 45s linear infinite;
-  /* Animación de movimiento de la nube */
-  z-index: 3;
-  animation-delay: 20s;
-}
-
-
-@keyframes mover_nube1c {
-  0% {
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 30%;
+    /* Posición vertical centrada */
     left: 120%;
-    /* Comienza fuera de la pantalla en la derecha */
+    /* Posición inicial centrada */
+    transform: translate(-50%, -50%);
+    animation: mover_nube1c 45s linear infinite;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+    animation-delay: 20s;
   }
 
-  100% {
-    left: -30%;
-    /* Llega a 1 cm antes de salir de la pantalla en la izquierda */
+  #nube1cc {
+    background-image: var(--bg-nube-nueva);
+
+    background-repeat: no-repeat;
+    /* No repetir la imagen */
+    background-position: center;
+    /* Centrar la imagen */
+    width: 100%;
+    /* Ancho del div igual al ancho de la imagen */
+    height: 100%;
+    /* Altura del div igual a la altura de la imagen */
+    position: absolute;
+    top: 33%;
+    /* Posición vertical centrada */
+    left: 120%;
+    /* Posición inicial centrada */
+    transform: translate(-48%, -50%);
+    animation: mover_nube1c 45s linear infinite;
+    /* Animación de movimiento de la nube */
+    z-index: 3;
+    animation-delay: 20s;
   }
-}
+
+
+  @keyframes mover_nube1c {
+    0% {
+      left: 120%;
+      /* Comienza fuera de la pantalla en la derecha */
+    }
+
+    100% {
+      left: -30%;
+      /* Llega a 1 cm antes de salir de la pantalla en la izquierda */
+    }
+  }
 
 
 }
- 
+
 
 
 
@@ -1534,14 +1811,14 @@ background-color: #fdae1a00;
   height: 100%;
   /* Altura deseada para el div */
 
-  background-image: var( --bg-montanas1);
+  background-image: var(--bg-montanas1);
   position: fixed;
   left: 0;
   overflow: hidden;
-  
+
   z-index: 2;
 }
- 
+
 
 #montanas_1.mover {
   animation: moverImagenFondo_montana1 2s ease forwards;
@@ -1589,7 +1866,7 @@ background-color: #fdae1a00;
   height: 100%;
   /* Altura deseada para el div */
 
-  background-image: var( --bg-montanas2);
+  background-image: var(--bg-montanas2);
   position: fixed;
   left: 0;
   overflow: hidden;
@@ -1644,8 +1921,8 @@ background-color: #fdae1a00;
   height: 100%;
   /* Altura deseada para el div */
 
-  background-image:  var( --bg-montanas3);
-   position: fixed;
+  background-image: var(--bg-montanas3);
+  position: fixed;
   left: 0;
   overflow: hidden;
   z-index: 2;
@@ -1734,7 +2011,7 @@ background-color: #fdae1a00;
 }
 
 @media only screen and (max-device-width: 640px) {
-  #burrito1 {     
+  #burrito1 {
     background-size: 40vw;
     background-position-x: right;
   }
@@ -1793,15 +2070,18 @@ background-color: #fdae1a00;
   /* Aplica la animación */
   animation: moverNubes_fondo 490s linear infinite;
   /* Ajusta la duración y el efecto según sea necesario */
-  
+
 }
 
 @keyframes moverNubes_fondo {
   0% {
-    background-position-x: left; /* Comienza en la posición actual */
+    background-position-x: left;
+    /* Comienza en la posición actual */
   }
+
   100% {
-    background-position-x: 300%; /* Mueve completamente a la izquierda */
+    background-position-x: 300%;
+    /* Mueve completamente a la izquierda */
   }
 }
 
@@ -1819,7 +2099,5 @@ background-color: #fdae1a00;
 #nuevo-subtitulo,
 #nuevo-autorTitulo {
   margin: 0;
-
+  user-select: none;
 }
-
- 
