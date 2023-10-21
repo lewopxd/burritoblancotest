@@ -838,21 +838,9 @@ main {
     height: calc((100vw / 5) - 9vw);
     display: none;
   }
-  .linea img.animate {
-
-    width: calc((100vw / 5) - 9vw);
-    height: calc((100vw / 5) - 9vw);
-    display: block;
-  }
-
-
-.pp.animate{
-   font-size: 0px;
-  /* Aplicación de la animación */
-}
-
 
 }
+
 
 /*-----------------------------------------------------------------><>>> BIG SCREEN*/
 
