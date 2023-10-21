@@ -1159,11 +1159,13 @@ main {
 
 
   .linea {
-    padding: 10px;
-    border: 1px solid #2ffa4000;
+    padding: 0px;
+    border: 1px solid #09270c00;
     font-size: 2.8vw;
-    margin: 1px;
-    margin-right: 40px;
+    
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 1vw;
     text-align: center;
     cursor: pointer;
     user-select: none;
@@ -1196,18 +1198,18 @@ main {
 
 
   .linea:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     /* Escala el texto al pasar el mouse */
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     /* Cambia el espaciado entre letras al pasar el mouse */
-
+     
   }
 
 
   .linea:active {
-    transform: scale(1.2);
+    transform: scale(1.1);
     /* Escala el texto al pasar el mouse */
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     /* Cambia el espaciado entre letras al pasar el mouse */
     color: #077bbe;
   }
@@ -1218,11 +1220,12 @@ main {
     }
 
     to {
-      font-size: 1.9vw;
+      font-size: calc(1.6vw + 10px);
     }
   }
 
   .linea.animado {
+    white-space: nowrap;
 
     animation: cambiarTamanioTexto 0.3s forwards;
     /* Aplicación de la animación */
