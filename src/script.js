@@ -81,6 +81,8 @@ visualViewport.addEventListener("resize", () => {
 window.addEventListener("resize", reportWindowSize);
 function reportWindowSize() {
   const t = document.getElementById("nuevo-titulo");
+   
+  //cambiarTextoVacio();
 
   if (!is_firstClick) {
     if (window.innerWidth <= 640) {
@@ -165,7 +167,8 @@ function manageIndex(index) {
     var contenItems0 = document.getElementById("contenedorItems0");
     contenItems0.classList.add('animate');
 
-    cambiarTextoVacio();
+  //  cambiarTextoVacio();
+  cambiarTextoVacio2();
 
     if (window.innerWidth <= 640) {
     var contenedorit = document.getElementById("contenedorItems");
@@ -207,6 +210,22 @@ thistit.textContent = texto;
 
 }
 
+
+function cambiarTextoVacio2() {
+  var elementosPP = document.querySelectorAll(".pp");
+
+  elementosPP.forEach(function(elemento) {
+    elemento.classList.add("animate"); // Reemplaza "tuClaseDeAnimacion" con el nombre de tu clase de animación
+  });
+
+  var imagenesEnLinea = document.querySelectorAll(".linea img");
+
+// Recorre todas las imágenes y agrega la clase de animación
+imagenesEnLinea.forEach(function(imagen) {
+  imagen.classList.add("animate"); // Reemplaza "tuClaseDeAnimacion" con el nombre de tu clase de animación
+});
+
+}
 // Función para cambiar el texto de los elementos .linea a un texto vacío
 function cambiarTextoVacio() {
   console.log("vaciar");
@@ -232,10 +251,36 @@ elementosLineax.forEach(function(elemento) {
   image.style.display = "block"; // Cambia el atributo "display" a "block"
   }
 });
-
-
+ 
     
   }
+    
+
+
+  if (anchoPantalla > 640) {
+   
+    // Obtén todos los elementos con la clase ".linea"
+    var elementosLineax = document.querySelectorAll(".linea");
+    
+    // Recorre todos los elementos y establece el contenido de los elementos <p> en blanco
+    elementosLineax.forEach(function(elemento) {
+      var parrafo = elemento.querySelector(".pp");
+      if (parrafo) {
+         
+        parrafo.style.fontSize = "7w"
+      }
+    
+      var image = elemento.querySelector("img");
+      if(image){
+      image.style.display = "none"; // Cambia el atributo "display" a "block"
+      }
+    });
+     
+        
+      }
+
+
+
 }
 
 // Llama a la función cuando se carga la página y cuando se redimensiona la ventana
@@ -368,6 +413,3 @@ function moverMontana_der() {
   currentPosition1 += Math.abs(25 * (index_item - last_index_item));
 
 }
-
-
-
