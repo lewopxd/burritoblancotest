@@ -10,6 +10,8 @@
   <title>Burrito Blanco</title>
   <link  href='https://host-j.netlify.app/font.css'>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./page1.css">
+  <link rel="stylesheet" href="./page2.css">
   <link rel="stylesheet" href="./urls.css"> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,10 +132,10 @@
     <div id="contenedor-principal2">
           <div id="paginaHolder">
           <div id="pagina1">
-            pagina1
+                  <div w3-include-html="page1.html"></div> 
           </div>
           <div id="pagina2">
-            pagina2
+            <div w3-include-html="page2.html"></div> 
           </div>
 
           <div id="pagina3">
@@ -157,6 +159,8 @@
 
 <!-- partial -->
   </script><script  src="./script.js"></script>
-
+  <script>
+    includeHTML();
+    </script>
 </body>
 </html>

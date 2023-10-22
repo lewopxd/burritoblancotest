@@ -21,6 +21,9 @@
 
 :root {
   --background-color: #0591aa;
+  --principal-color: #045968;
+  --principal-page-color: #ecf9ffcc;
+  --secondary-page-color: rgba(255, 255, 255, 0);
 }
 
 @font-face {
@@ -38,7 +41,8 @@ body {
   overflow: hidden;
   font-size: 1.05vw;
   font-family: "Liu Jian Mao Cao", cursive;
-  color: #045968;
+  color: var(--principal-color);
+  
   background: var(--background-color);
   padding: 0;
   /*padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);*/
@@ -481,7 +485,7 @@ main {
     margin-top: 5px; 
     margin-bottom: 5px;
     
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 100%;
     height: calc(100% - 10px);
     z-index: 2;
@@ -492,7 +496,10 @@ main {
 
   #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
 
-    background-color: rgba(255, 255, 255, 0.888);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: #ffffff;
+    border-style: dashed;
+    border-width: 1px;
     width: calc(98% - 5px);
     height: calc(100% - 5px);
     z-index: 2;    
@@ -509,9 +516,11 @@ main {
   @keyframes moveInLeft {
     from {
       left: calc(100% + var(--PaginaOffset));
+      background-color: var(--secondary-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
+      background-color: var(--principal-page-color);
     }
   }
 
@@ -523,9 +532,12 @@ main {
   @keyframes moveOutLeft {
     from {
       left: calc(0% + var(--PaginaOffset));
+      background-color: var(--principal-page-color);
+     
     }
     to {
       left: calc(-100%); 
+      background-color: var(--secondary-page-color);
     }
   }
 
@@ -535,9 +547,11 @@ main {
   @keyframes moveInRight {
     from {
       left: calc(-100% );
+      background-color: var(--secondary-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
+      background-color: var(--principal-page-color);
     }
   }
 
@@ -547,9 +561,11 @@ main {
   @keyframes moveOutRight {
     from {
       left: calc(0% + var(--PaginaOffset));
+      background-color: var(--principal-page-color);
     }
     to {
       left: calc(100% ); 
+      background-color: var(--secondary-page-color);
     }
   }
 
@@ -600,7 +616,7 @@ main {
     align-items: flex-start;
 
     animation: moverContenedor-delante 0.5s ease forwards;
-
+   background-color:  rgba(0, 99, 141, 0.459);
   }
 
   #contenedor-titulo {
@@ -768,7 +784,7 @@ main {
     border-color: #ffffff00;
     border-width: 1px;
     border-style: solid; 
-    border-radius: 7vw;
+   /* border-radius: 7vw;*/
     z-index: 2;
 
   }
@@ -776,8 +792,8 @@ main {
    
 
   #contenedorItems.animatebg{
-    background-color: rgba(0, 99, 141, 0.459); /* Fondo con color */
-    border-color: #ffffff; /* Borde con color */
+    background-color: rgba(0, 99, 141, 0); /* Fondo con color */
+    border-color: #ffffff00; /* Borde con color */
     animation: fadeInBackground-ci 0.5s ease forwards;
   }
 
@@ -817,12 +833,13 @@ main {
     width: 100%;
     justify-content: center;
     text-align: center;
+    display: none;
   }
 
   #tit-0 {
     background-color: #fdae1a00;
     justify-content: center;
-    font-size: 8vw;
+    font-size: 6vw;
     color: #fff;
     font-family: 'Caveat', cursive;
 
@@ -872,7 +889,8 @@ main {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* Restablece la transición al tamaño normal al final de la animación */
 
-    color: #ffffff;
+    color: #bed9f7;
+   /* filter: invert(0%) sepia(99%) saturate(2%) hue-rotate(332deg) brightness(97%) contrast(100%);*/
   }
 
 
@@ -881,7 +899,7 @@ main {
     /* Escala el texto al pasar el mouse */
 
     /* Cambia el espaciado entre letras al pasar el mouse */
-    color: #077bbe;
+   /* color: #077bbe;*/
   }
 
   @keyframes cambiarTamanioTexto {
@@ -903,14 +921,14 @@ main {
 
   .imgn {
 
-    width: calc((100vw / 5) - 9vw);
-    height: calc((100vw / 5) - 9vw);
+    width: calc((100vw / 5) - 12vw);
+    height: calc((100vw / 5) - 12vw);
     display: none;
   }
   .imgn.animate {
 
-    width: calc((100vw / 5) - 9vw);
-    height: calc((100vw / 5) - 9vw);
+    width: calc((100vw / 5) - 12vw);
+    height: calc((100vw / 5) - 12vw);
     display: block;
   }
 
@@ -923,7 +941,7 @@ main {
   }
   #imItem2{
     background-image: var(--bg-icon-aula);
-    
+
     background-size: 100%;
     background-color: #fdae1a00;
     background-repeat: no-repeat;
@@ -1039,18 +1057,38 @@ main {
     position: relative;
     transform: translateX(0);
     overflow: hidden;
+    font-size: large;
+    font-family: sans-serif;
+    color: #034a68;
   }
 
+  #paginaHolder h1{
+    
+   font-family: 'Caveat', cursive;
+   font-weight: normal;
+   /*background: var(--principal-color);*/
+   display: inline-block;
+   
+  }
+  
+  .page{
+    margin: 10px;
+    
+  }
   #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
-
-    background-color: rgba(255, 255, 255, 0.888);
+    
+    background-color: rgba(255, 255, 255, 0.137);
+    border-color: #08356d;
+    border-width: 2px;
+    border-style: dashed;
+    
     width: calc(60% - 10px);
     height: calc(100% - 10px);
     z-index: 2;    
     position: absolute;
     margin: 5px;
     left: -100%;
-    font-size: 9vw;
+   
   }
    
 
@@ -1060,9 +1098,11 @@ main {
   @keyframes moveInLeft {
     from {
       left: calc(100% + var(--PaginaOffset));
+      background-color: var(--secondary-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
+      background-color: var(--principal-page-color);
     }
   }
 
@@ -1074,9 +1114,11 @@ main {
   @keyframes moveOutLeft {
     from {
       left: calc(0% + var(--PaginaOffset));
+      background-color: var(--principal-page-color);
     }
     to {
       left: calc(-100%); 
+      background-color: var(--secondary-page-color);
     }
   }
 
@@ -1086,9 +1128,11 @@ main {
   @keyframes moveInRight {
     from {
       left: calc(-100% );
+      background-color: var(--secondary-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
+      background-color: var(--principal-page-color);
     }
   }
 
@@ -1098,9 +1142,11 @@ main {
   @keyframes moveOutRight {
     from {
       left: calc(0% + var(--PaginaOffset));
+      background-color: var(--principal-page-color);
     }
     to {
       left: calc(100% ); 
+      background-color: var(--secondary-page-color);
     }
   }
 
