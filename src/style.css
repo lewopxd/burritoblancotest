@@ -461,9 +461,9 @@ main {
 
   #contenedor-principal2 {
     margin-top: 1vh;
-    margin-bottom: 3vh;
-    background-color: rgba(0, 0, 0, 0);
-    width: 98%;
+    margin-bottom: 1vh;
+    background-color: rgba(255, 0, 0, 0);
+    width: 98vw;
     height: 73vh;
     z-index: 2;
     display: flex;
@@ -471,17 +471,86 @@ main {
 
   }
 
-  #pagina1 {
+    /*
+          calcular a la  mitad de la pantalla calc((100% - 60%) / 2)
+          donde 60% es el ancho de la pagina respecto al tamaño de su parent
+     */
 
-    background-color: rgba(231, 231, 231, 0);
-    width: calc(100% - 10px);
-    ;
+  #paginaHolder{
+    --PaginaOffset: calc((100% - 98% - 5px) / 2);   /* */
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    
+    background-color: rgb(0, 0, 0);
+    width: 100%;
     height: calc(100% - 10px);
     z-index: 2;
-    display: flex;
     position: relative;
-    margin: 5px;
+    transform: translateX(0);
+    overflow: hidden;
+  }
 
+  #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
+
+    background-color: rgba(255, 255, 255, 0.888);
+    width: calc(98% - 5px);
+    height: calc(100% - 5px);
+    z-index: 2;    
+    position: absolute; 
+    margin: 5px;
+    left: -100%;
+    font-size: 9vw;
+  }
+   
+
+  .EntraPagina-toLeft{
+    animation: moveInLeft 0.4s ease forwards;
+  }
+  @keyframes moveInLeft {
+    from {
+      left: calc(100% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(0% + var(--PaginaOffset)); 
+    }
+  }
+
+   
+
+  .SalePagina-toLeft{
+    animation: moveOutLeft 0.4s ease forwards;
+  }
+  @keyframes moveOutLeft {
+    from {
+      left: calc(0% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(-100%); 
+    }
+  }
+
+  .EntraPagina-toRight{
+    animation: moveInRight 0.4s ease forwards;
+  }
+  @keyframes moveInRight {
+    from {
+      left: calc(-100% );
+    }
+    to {
+      left: calc(0% + var(--PaginaOffset)); 
+    }
+  }
+
+  .SalePagina-toRight{
+    animation: moveOutRight 0.4s ease forwards;
+  }
+  @keyframes moveOutRight {
+    from {
+      left: calc(0% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(100% ); 
+    }
   }
 
 
@@ -832,19 +901,55 @@ main {
     /* Aplicación de la animación */
   }
 
-  .linea img {
+  .imgn {
 
     width: calc((100vw / 5) - 9vw);
     height: calc((100vw / 5) - 9vw);
     display: none;
   }
-  .linea img.animate {
+  .imgn.animate {
 
     width: calc((100vw / 5) - 9vw);
     height: calc((100vw / 5) - 9vw);
     display: block;
   }
 
+  #imItem1{
+    background-image: var(--bg-icon-donkey);
+    background-size: 100%;
+    background-color: #fdae1a00;
+    background-repeat: no-repeat;
+    
+  }
+  #imItem2{
+    background-image: var(--bg-icon-aula);
+    
+    background-size: 100%;
+    background-color: #fdae1a00;
+    background-repeat: no-repeat;
+    
+  }
+  #imItem3{
+    background-image: var(--bg-icon-mundo);
+    background-size: 100%;
+    background-color: #fdae1a00;
+    background-repeat: no-repeat;
+    
+  }
+  #imItem4{
+    background-image: var(--bg-icon-amigos);
+    background-size: 100%;
+    background-color: #fdae1a00;
+    background-repeat: no-repeat;
+    
+  }
+  #imItem5{
+    background-image: var(--bg-icon-autor);
+    background-size: 100%;
+    background-color: #fdae1a00;
+    background-repeat: no-repeat;
+    
+  }
 
 .pp.animate{
    font-size: 0px;
@@ -906,29 +1011,98 @@ main {
   }
 
   #contenedor-principal2 {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    background-color: rgba(0, 0, 0, 0);
-    width: 60%;
-    height: 75vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: rgba(255, 0, 0, 0);
+    width: 100vw;
+    height: 80vh;
     z-index: 2;
     display: flex;
     position: relative;
 
   }
 
-  #pagina1 {
+    /*
+          calcular a la  mitad de la pantalla calc((100% - 60%) / 2)
+          donde 60% es el ancho de la pagina respecto al tamaño de su parent
+     */
 
-    background-color: rgba(231, 231, 231, 0.306);
-    width: calc(100% - 10px);
+  #paginaHolder{
+    --PaginaOffset: calc((100% - 60%) / 2);   /* */
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
     height: calc(100% - 10px);
     z-index: 2;
-    display: flex;
     position: relative;
-    margin: 5px;
-
+    transform: translateX(0);
+    overflow: hidden;
   }
 
+  #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
+
+    background-color: rgba(255, 255, 255, 0.888);
+    width: calc(60% - 10px);
+    height: calc(100% - 10px);
+    z-index: 2;    
+    position: absolute;
+    margin: 5px;
+    left: -100%;
+    font-size: 9vw;
+  }
+   
+
+  .EntraPagina-toLeft{
+    animation: moveInLeft 0.5s ease forwards;
+  }
+  @keyframes moveInLeft {
+    from {
+      left: calc(100% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(0% + var(--PaginaOffset)); 
+    }
+  }
+
+   
+
+  .SalePagina-toLeft{
+    animation: moveOutLeft 0.5s ease forwards;
+  }
+  @keyframes moveOutLeft {
+    from {
+      left: calc(0% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(-100%); 
+    }
+  }
+
+  .EntraPagina-toRight{
+    animation: moveInRight 0.5s ease forwards;
+  }
+  @keyframes moveInRight {
+    from {
+      left: calc(-100% );
+    }
+    to {
+      left: calc(0% + var(--PaginaOffset)); 
+    }
+  }
+
+  .SalePagina-toRight{
+    animation: moveOutRight 0.5s ease forwards;
+  }
+  @keyframes moveOutRight {
+    from {
+      left: calc(0% + var(--PaginaOffset));
+    }
+    to {
+      left: calc(100% ); 
+    }
+  }
 
 
   #contenedor-delante {
@@ -1231,7 +1405,7 @@ main {
     /* Aplicación de la animación */
   }
 
-  .linea img {
+  .imgn {
 
     width: 0;
     height: 0;

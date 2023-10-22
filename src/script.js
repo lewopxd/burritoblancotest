@@ -6,6 +6,7 @@ let currentPosition3 = 0;
 let currentPosition2 = 0;
 let currentPosition1 = 0;
 
+ 
 
 var index_item = 0;
 var last_index_item = 0;
@@ -170,6 +171,7 @@ function manageIndex(index) {
   //  cambiarTextoVacio();
   cambiarTextoVacio2();
 
+
     if (window.innerWidth <= 640) {
     var contenedorit = document.getElementById("contenedorItems");
     // Agrega una clase para activar la animación
@@ -186,15 +188,17 @@ function manageIndex(index) {
   if (index_item > last_index_item) {
     //animacion a la izquierda
     moverMontana();
+    ManagePagesLeft();
+
   } else if (index_item < last_index_item) {
     //animacion a la derecha
     moverMontana_der();
+    ManagePagesRight();
   } else if (index_item == last_index_item) {
     //no hacear nada
   }
 
-  //despues de animar, establecer el ultimo index
-  last_index_item = index_item;
+
 
 
 // cambiar el titulo a su valor
@@ -208,6 +212,11 @@ var  thistit = document.getElementById("tit-0");
 
 thistit.textContent = texto;
 
+
+ 
+  //despues de animar, establecer el ultimo index
+  last_index_item = index_item;
+
 }
 
 
@@ -218,7 +227,7 @@ function cambiarTextoVacio2() {
     elemento.classList.add("animate"); // Reemplaza "tuClaseDeAnimacion" con el nombre de tu clase de animación
   });
 
-  var imagenesEnLinea = document.querySelectorAll(".linea img");
+  var imagenesEnLinea = document.querySelectorAll(".imgn");
 
 // Recorre todas las imágenes y agrega la clase de animación
 imagenesEnLinea.forEach(function(imagen) {
@@ -226,62 +235,11 @@ imagenesEnLinea.forEach(function(imagen) {
 });
 
 }
-// Función para cambiar el texto de los elementos .linea a un texto vacío
-function cambiarTextoVacio() {
-  console.log("vaciar");
-  // Obtén el ancho de la pantalla
-  var anchoPantalla = window.innerWidth;
-
-  // Verifica si el ancho de la pantalla es menor o igual a 640px
-  if (anchoPantalla <= 640) {
-    
-// Obtén todos los elementos con la clase ".linea"
-var elementosLineax = document.querySelectorAll(".linea");
-
-// Recorre todos los elementos y establece el contenido de los elementos <p> en blanco
-elementosLineax.forEach(function(elemento) {
-  var parrafo = elemento.querySelector(".pp");
-  if (parrafo) {
-     
-    parrafo.style.fontSize = "0px"
-  }
-
-  var image = elemento.querySelector("img");
-  if(image){
-  image.style.display = "block"; // Cambia el atributo "display" a "block"
-  }
-});
- 
-    
-  }
-    
-
-
-  if (anchoPantalla > 640) {
-   
-    // Obtén todos los elementos con la clase ".linea"
-    var elementosLineax = document.querySelectorAll(".linea");
-    
-    // Recorre todos los elementos y establece el contenido de los elementos <p> en blanco
-    elementosLineax.forEach(function(elemento) {
-      var parrafo = elemento.querySelector(".pp");
-      if (parrafo) {
-         
-        parrafo.style.fontSize = "7w"
-      }
-    
-      var image = elemento.querySelector("img");
-      if(image){
-      image.style.display = "none"; // Cambia el atributo "display" a "block"
-      }
-    });
-     
-        
-      }
 
 
 
-}
+
+
 
 // Llama a la función cuando se carga la página y cuando se redimensiona la ventana
  // Llama a la función al cargar la página
@@ -340,7 +298,7 @@ function movem() {
 }
 
 function moverMontana() {
-
+  
   const montana3 = document.getElementById("montanas_3");
   const montana2 = document.getElementById("montanas_2");
   const montana1 = document.getElementById("montanas_1");
@@ -411,5 +369,75 @@ function moverMontana_der() {
   montana1.style.setProperty("--index-dif1", Math.abs(25 * (index_item - last_index_item)) + "vw");
   montana1.classList.add("mover_der");
   currentPosition1 += Math.abs(25 * (index_item - last_index_item));
+
+}
+
+
+
+function ManagePagesLeft(){
+  const pag = document.getElementById("pagina"+index_item);
+  const lastpag = document.getElementById("pagina"+last_index_item);
+ 
+  console.log("agregué el elemento");
+
+  pag.style.display = "block";
+  
+
+  pag.classList.remove("SalePagina-toRight");
+  pag.classList.remove("EntraPagina-toRight");
+  pag.classList.remove("EntraPagina-toLeft");
+  pag.classList.remove("SalePagina-toLeft");
+  void pag.offsetWidth; 
+  pag.classList.add("EntraPagina-toLeft");
+
+  if((last_index_item > 0 )){
+    lastpag.style.display = "block";
+    lastpag.classList.remove("SalePagina-toRight");
+    lastpag.classList.remove("EntraPagina-toRight");
+    lastpag.classList.remove("EntraPagina-toLeft");
+    lastpag.classList.remove("SalePagina-toLeft");
+  
+    void lastpag.offsetWidth;    
+   lastpag.classList.add("SalePagina-toLeft");
+
+   
+   
+  }
+ 
+  
+}
+
+
+
+function ManagePagesRight(){
+  const pag = document.getElementById("pagina"+index_item);
+  const lastpag = document.getElementById("pagina"+last_index_item);
+ 
+  pag.style.display = "block";
+  lastpag.style.display = "block";
+  console.log("agregué el elemento");
+  
+  pag.classList.remove("SalePagina-toRight");
+  pag.classList.remove("EntraPagina-toRight");
+  pag.classList.remove("EntraPagina-toLeft");
+  pag.classList.remove("SalePagina-toLeft");
+  void pag.offsetWidth; 
+
+  pag.classList.add("EntraPagina-toRight");
+
+ 
+  lastpag.classList.remove("SalePagina-toRight");
+  lastpag.classList.remove("EntraPagina-toRight");
+  lastpag.classList.remove("EntraPagina-toLeft");
+  lastpag.classList.remove("SalePagina-toLeft");
+
+  void lastpag.offsetWidth;      
+  lastpag.classList.add("SalePagina-toRight");
+
+   
+    
+ 
+  
+    
 
 }
