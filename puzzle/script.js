@@ -61,7 +61,9 @@ It is called with an object containing the following properties:
 
 */
 
+var menuopened=false;
 function Menu(params) {
+
 
   let parentDiv = params.parentDiv;
   if (typeof(parentDiv) == 'string') parentDiv = document.getElementById(parentDiv);
@@ -74,6 +76,7 @@ function Menu(params) {
   dt.appendChild(document.createTextNode(params.title));
   let that = this;
   dt.addEventListener("click",()=>that.display());
+   
   divMenu.appendChild(dt);
   this.list = [];  
   for (let k = 0; k < params.lines.length; ++k){
@@ -92,11 +95,18 @@ function Menu(params) {
 } // Menu
 
 Menu.prototype.collapse = function() {
+ 
     this.divMenu.classList.remove('open');
-
+  
 }
 Menu.prototype.display = function() {
+  if(menuopened==false){
     this.divMenu.classList.add('open');
+    menuopened=true;
+  }else{
+    this.divMenu.classList.remove('open');
+    menuopened=false;
+  }
 
 }
 
@@ -698,12 +708,12 @@ on number of pieces
       lineOffset: 30,
       lineStep: 30,
       lines: [
-        {text: "load image", func: this.loadImage()},
-        {text: "12 piece", func: this.returnFunct(12)},
-        {text: "25 piece", func: this.returnFunct(25)},
-        {text: "50 piece", func: this.returnFunct(50)},
-        {text: "100 piece", func: this.returnFunct(100)},
-        {text: "200 piece", func: this.returnFunct(200)}
+        
+        {text: "12 piezas", func: this.returnFunct(12)},
+        {text: "25 piezas", func: this.returnFunct(25)},
+        {text: "50 piezas", func: this.returnFunct(50)},
+        {text: "100 piezas", func: this.returnFunct(100)},
+        {text: "200 piezas  ", func: this.returnFunct(200)}
       ]
     });
   }
@@ -1486,13 +1496,101 @@ function lookForLoops (tbCases) {
 
 window.addEventListener("load", function(){
 
-let img = 'https://assets.codepen.io/2574552/Mona_Lisa.jpg';
+ 
+
+
+let img = geturl2();
 
 autoStart = isMiniature(); // used for nice miniature in CodePen
 
+
+console.log(window.innerWidth);
 let x = new Puzzle ( {img: img,
                       width: window.innerWidth,
                       height: window.innerHeight,
                       idiv: "forPuzzle" });
 
 });
+
+
+
+ 
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function geturl2(){
+
+//obten el id de la url : imgId
+var imgId=0;
+
+
+var imgId_check = getParameterByName("imgId");
+
+if(imgId_check){
+if (imgId_check!="") {
+     imgId = imgId_check;
+}
+}
+
+
+// Obtén el elemento raíz (:root)
+const root = document.documentElement;
+
+// Obtén el valor de la variable CSS
+var valorVariable = getComputedStyle(root).getPropertyValue("--link-im"+imgId);
+
+if(valorVariable){
+
+}else{
+  valorVariable = getComputedStyle(root).getPropertyValue("--link-im0");
+}
+
+console.log(valorVariable); // Esto imprimirá el valor de la variable CSS en la consola
+
+return valorVariable
+
+}
+function getUrl(){
+  var imgId=0;
+
+
+var imgId_check = getParameterByName("imgId");
+
+if(imgId_check){
+if (imgId_check!="") {
+     imgId = imgId_check;
+}
+}
+
+const newId = parseInt(imgId,10);
+
+const UrlImages = ["im0.jpg", "im1.jpg", "im2.jpg", "im3.jpg"];
+const UrlImagesv = ["im0v.jpg", "im1v.jpg", "im2v.jpg", "im3v.jpg"];
+var newUrl="";
+
+
+ 
+
+if (window.innerWidth <= 640) {
+   
+  if(UrlImagesv[newId]){
+    newUrl = "./imgs/"+UrlImagesv[newId];
+    }else{
+      newUrl = "./imgs/"+UrlImagesv[0];
+    }
+}else if(window.innerWidth > 640){
+  console.log("no es celu");
+  if(UrlImages[newId]){
+    newUrl = "./imgs/"+UrlImages[newId];
+    }else{
+      newUrl = "./imgs/"+UrlImages[0];
+    }
+}
+
+return newUrl;
+
+}

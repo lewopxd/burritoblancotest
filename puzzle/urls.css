@@ -1,0 +1,20 @@
+@media only screen and (min-device-width: 641px) {:root {
+
+    --link-im0: ./imgs/im0.jpg;
+    --link-im1: ./imgs/im1.jpg;
+    --link-im2: ./imgs/im2.jpg;
+
+}
+
+}
+
+@media only screen and (max-device-width: 640px) {
+:root {
+    --link-im0: ./imgs/im0v.jpg;
+    --link-im1: ./imgs/im1V.jpg;
+    --link-im2: ./imgs/im2V.jpg;
+
+
+}
+
+}
