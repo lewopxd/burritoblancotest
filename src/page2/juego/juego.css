@@ -1,0 +1,24 @@
+#pg-juego-puzzle-handler{
+    width: 100%;
+    height: 100%;
+   
+    position: absolute;
+    
+   
+    background-color: rgba(118, 6, 6, 0);
+
+   
+    z-index: 5001;
+     
+    display: none;
+    
+}
+
+#framePuzzle{
+
+width: 100%;
+height: 100%;
+ 
+
+
+}

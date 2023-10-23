@@ -22,8 +22,14 @@
 :root {
   --background-color: #0591aa;
   --principal-color: #045968;
+
   --principal-page-color: #ecf9ffcc;
   --secondary-page-color: rgba(255, 255, 255, 0);
+  --border-page-color: #045968;
+
+  --principal-mobile-page-color: #ecf9ff3c;
+  --secondary-mobile-page-color: rgba(255, 255, 255, 0);
+  --border-mobile-page-color: #045968;
 }
 
 @font-face {
@@ -497,8 +503,8 @@ main {
 
   #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
 
-    background-color: rgba(255, 255, 255, 0);
-    border-color: #ffffff;
+    background-color:var(--principal-mobile-page-color);
+    border-color:  var(--border-mobile-page-color);
     border-style: dashed;
     border-width: 1px;
     width: calc(98% - 5px);
@@ -533,11 +539,11 @@ main {
   @keyframes moveInLeft {
     from {
       left: calc(100% + var(--PaginaOffset));
-      background-color: var(--secondary-page-color);
+      background-color: var(--secondary-mobile-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
-      background-color: var(--principal-page-color);
+      background-color: var(--principal-mobile-page-color);
     }
   }
 
@@ -549,12 +555,12 @@ main {
   @keyframes moveOutLeft {
     from {
       left: calc(0% + var(--PaginaOffset));
-      background-color: var(--principal-page-color);
+      background-color: var(--principal-mobile-page-color);
      
     }
     to {
       left: calc(-100%); 
-      background-color: var(--secondary-page-color);
+      background-color: var(--secondary-mobile-page-color);
     }
   }
 
@@ -564,11 +570,11 @@ main {
   @keyframes moveInRight {
     from {
       left: calc(-100% );
-      background-color: var(--secondary-page-color);
+      background-color: var(--secondary-mobile-page-color);
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
-      background-color: var(--principal-page-color);
+      background-color: var(--principal-mobile-page-color);
     }
   }
 
@@ -578,11 +584,11 @@ main {
   @keyframes moveOutRight {
     from {
       left: calc(0% + var(--PaginaOffset));
-      background-color: var(--principal-page-color);
+      background-color: var(--principal-mobile-page-color);
     }
     to {
       left: calc(100% ); 
-      background-color: var(--secondary-page-color);
+      background-color: var(--secondary-mobile-page-color);
     }
   }
 
@@ -1115,8 +1121,8 @@ main {
   }
   #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
     
-    background-color: rgba(255, 255, 255, 0.137);
-    border-color: #08356d;
+    background-color: var(--principal-page-color);
+    border-color: var(--border-page-color);
     border-width: 2px;
     border-style: dashed;
     

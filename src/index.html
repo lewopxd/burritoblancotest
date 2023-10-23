@@ -10,8 +10,10 @@
   <title>Burrito Blanco</title>
   <link  href='https://host-j.netlify.app/font.css'>
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./page1.css">
-  <link rel="stylesheet" href="./page2.css">
+  <link rel="stylesheet" href="./page1/page1.css">
+  <link rel="stylesheet" href="./page2/page2.css">
+  <link rel="stylesheet" href="./page2/juego/juego.css">
+  <link rel="stylesheet" href="./page2/musica/page-muisca.css">
   <link rel="stylesheet" href="./urls.css"> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +22,15 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
+ 
+<div id="pg-juego-puzzle-handler">
+
+  <iframe src="../puzzle" width="100%" height="100%" id="framePuzzle"></iframe>
+            
+            
+</div>
+
+
 <div id="preloader">  
   <div id = "preloader-container">
     <div class="circle-loader"></div>
@@ -31,6 +42,7 @@
     <span>Cargando</span>
   </div>
 </div>
+
 
 
 
@@ -132,10 +144,10 @@
     <div id="contenedor-principal2">
           <div id="paginaHolder">
           <div id="pagina1">
-                  <div w3-include-html="page1.html"></div> 
+              <div w3-include-html="./page1/page1.html"></div> 
           </div>
           <div id="pagina2">
-            <div w3-include-html="page2.html"></div> 
+            <div w3-include-html="./page2/page2.html"></div> 
           </div>
 
           <div id="pagina3">
@@ -145,7 +157,8 @@
             pagina4
           </div>
           <div id="pagina5">
-            pagina5
+            autor
+             
           </div>
         </div>
     </div>
@@ -158,7 +171,10 @@
 </div>
 
 <!-- partial -->
-  </script><script  src="./script.js"></script>
+  <script  src="./script.js"></script>
+ <script  src="./page1/page1.js"></script>
+ <script  src="./page2/page2.js"></script>
+ <script  src="./page2/juego/juego.js"></script>
   <script>
     includeHTML();
     </script>

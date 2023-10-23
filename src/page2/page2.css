@@ -1,0 +1,143 @@
+#pagina2{
+    background-color: rgba(250, 235, 215, 0);
+}
+
+
+@media only screen and (max-device-width: 640px) {
+#page2 {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  
+}
+.page2-sub{
+    display: none;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: rgba(127, 255, 212, 0);
+    margin: 0;
+    top: 0;
+}
+}
+
+@media only screen and (min-device-width: 641px) {
+    #page2 {
+        position: absolute;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+      
+    }
+    .page2-sub{
+        display: none;
+        width: 100%;
+        height:100%;
+        background-color: rgba(127, 255, 212, 0);
+        margin: 0;
+        top: 0;
+    }
+    }
+
+
+.p2-layout {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid:
+        "p2-item1 p2-item2 p2-item3" 1fr "p2-item4 p2-item5 p2-item6" 1fr "p2-item7 p2-item8 p2-item9" 1fr / 1fr 1fr 1fr;
+    gap: 8px;
+
+    justify-content: space-around;
+    align-content: space-around;
+    background-color: rgba(0, 0, 255, 0);
+
+    justify-items: center;
+    align-items: center;
+     
+}
+
+#p2-back{
+    width:calc(40px + 0.5vw);
+    height: calc(40px + 0.5vw);
+    position: absolute;
+    background-color: rgba(0, 0, 255, 0.08);
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+#p2-item1-sub{
+    
+}
+
+.arrow {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    
+}
+
+.arrow span {
+    display: block;
+    width: calc(10px + 0.5vw);
+    height: calc(10px + 0.5vw);
+    border-bottom: 5px solid white;
+    border-right: 5px solid rgb(255, 255, 255);
+    transform: rotate(45deg);
+    margin: -10px;
+    
+} 
+
+
+.p2-item{
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.p2-item p{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+#p2-item1 {
+    grid-area: p2-item1;
+    background-color: rgba(165, 42, 42, 0);
+    
+}
+
+
+#p2-item2 {
+    grid-area: p2-item2;
+}
+
+#p2-item3 {
+    grid-area: p2-item3;
+}
+
+#p2-item4 {
+    grid-area: p2-item4;
+}
+
+#p2-item5 {
+    grid-area: p2-item5;
+}
+
+#p2-item6 {
+    grid-area: p2-item6;
+}
+
+#p2-item7 {
+    grid-area: p2-item7;
+}
+
+#p2-item8 {
+    grid-area: p2-item8;
+}
+
+#p2-item9 {
+    grid-area: p2-item9;
+}
