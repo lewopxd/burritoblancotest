@@ -230,7 +230,8 @@ main {
   }
 
   .button-audio {
-    bottom: 7.5rem;
+    bottom: 1rem;
+    right: 5rem;
   }
 
   .button-audio::before {
@@ -242,7 +243,7 @@ main {
   }
 
   .button-full {
-    bottom: 4rem;
+    bottom: 1rem;
   }
 
   .button-full::before {
@@ -258,17 +259,17 @@ main {
   }
 
   .active-audio {
-    --size: 1.75rem;
+    --size: 1.5rem;
     position: fixed;
     display: flex;
     align-items: center;
-    bottom: 7.5rem;
-    right: 6rem;
+    bottom: 1rem;
+    right: 10rem;
     padding: 0.55rem;
     height: 1.75rem;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     background: #FDAF1A;
     z-index: var(--front);
@@ -283,10 +284,10 @@ main {
     content: "";
     position: absolute;
     left: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.23rem;
+    height: 1.23rem;
     background: inherit;
-    transform: translateX(660%) rotate(45deg);
+    transform: translateX(565%) rotate(45deg);
     z-index: -1;
   }
 
@@ -464,7 +465,7 @@ main {
   }
 
   #contenedor-principal2 {
-    margin-top: 1vh;
+    margin-top: 1px;
     margin-bottom: 1vh;
     background-color: rgba(255, 0, 0, 0);
     width: 98vw;
@@ -482,7 +483,7 @@ main {
 
   #paginaHolder{
     --PaginaOffset: calc((100% - 98% - 5px) / 2);   /* */
-    margin-top: 5px; 
+    margin-top: 1px; 
     margin-bottom: 5px;
     
     background-color: rgba(0, 0, 0, 0);
@@ -505,10 +506,26 @@ main {
     z-index: 2;    
     position: absolute; 
     margin: 5px;
+    margin-top: 1px;
     left: -100%;
-    font-size: 9vw;
+     
+
   }
-   
+  #paginaHolder h1{
+    
+    font-family: 'Caveat', cursive;
+    font-weight: normal;
+    /*background: var(--principal-color);*/
+    display: inline-block;
+    font-size: x-large;
+   }
+
+   #paginaHolder {
+
+    font-size: large;
+    font-family: sans-serif;
+    color: #034a68;
+   }
 
   .EntraPagina-toLeft{
     animation: moveInLeft 0.4s ease forwards;
@@ -829,19 +846,21 @@ main {
 
 
   #contenedorItems0-titulos {
-    background-color: #0591aa00;
+    background-color: #0591aac7;
     width: 100%;
     justify-content: center;
     text-align: center;
-    display: none;
+    display:block ;
+    margin: 0;
+    padding: 0;
   }
 
   #tit-0 {
     background-color: #fdae1a00;
     justify-content: center;
-    font-size: 6vw;
+    font-size: 14px;
     color: #fff;
-    font-family: 'Caveat', cursive;
+    font-family: 'Sans-serif', normal;
 
 
   }
@@ -939,6 +958,25 @@ main {
     background-repeat: no-repeat;
     
   }
+  .linea::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid #ffffff; /* Cambia esto al color deseado para el triangulito */
+    opacity: 0;
+  }
+  
+.linea.activex::after{
+  opacity: 1; /* Cambia la opacidad cuando se hace clic en el elemento */
+}
+ 
+
   #imItem2{
     background-image: var(--bg-icon-aula);
 
@@ -1073,7 +1111,7 @@ main {
   
   .page{
     margin: 10px;
-    
+
   }
   #pagina1, #pagina2, #pagina3, #pagina4, #pagina5 {
     

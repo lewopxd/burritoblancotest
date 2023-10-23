@@ -176,8 +176,11 @@ function manageIndex(index) {
     var contenedorit = document.getElementById("contenedorItems");
     // Agrega una clase para activar la animación
     contenedorit.classList.add("animatebg");
+
+    
     }
 
+  
 
     is_firstClick = false;
   }
@@ -214,6 +217,18 @@ thistit.textContent = texto;
 
 
  
+
+if (window.innerWidth <= 640) {
+   
+  for (let xx = 1; xx <= 5; xx++) {    
+      document.getElementById("item"+xx).classList.remove("activex");
+    
+  }
+  document.getElementById("item"+index).classList.add("activex");
+}
+  
+
+
   //despues de animar, establecer el ultimo index
   last_index_item = index_item;
 
