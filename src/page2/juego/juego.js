@@ -13,9 +13,9 @@ function p3_button(index){
     juego_handler.style.visibility = "visible";
 
     
-    var ccc = document.getElementById("contenedor-delante3")
-    ccc.style.visibility = "hidden";
+    var ccc = document.getElementById("contenedor-delante3");
     ccc.style.display = "none";
+ 
   
 
 
