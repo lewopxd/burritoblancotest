@@ -60,10 +60,11 @@
     width:calc(40px + 0.5vw);
     height: calc(40px + 0.5vw);
     position: absolute;
-    background-color: rgba(0, 0, 255, 0.08);
+    background-color: rgba(0, 0, 255, 0.183);
     border-radius: 50%;
     display: none;
     cursor: pointer;
+    z-index: 5002;
 }
 
 #p2-item1-sub{
@@ -72,8 +73,8 @@
 
 .arrow {
     position: absolute;
-    top: 60%;
-    left: 40%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(90deg);
     

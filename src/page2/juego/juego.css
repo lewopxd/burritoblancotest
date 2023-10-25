@@ -1,16 +1,19 @@
 #pg-juego-puzzle-handler{
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 10px);
+    height: 90%;
    
     position: absolute;
     
-   
-    background-color: rgba(118, 6, 6, 0);
+    
+    background-color: rgba(255, 0, 0, 0);
 
    
-    z-index: 5001;
+    
      
-    display: none;
+    display: block;
+    z-index: -5001;
+    visibility: hidden;
+
    
     
 }
@@ -64,6 +67,10 @@ height: 100%;
     }
     }
 
+    #text-p3{
+        text-align: center;
+        margin-top: 20px;
+    }
 
 .p3-layout {
     width: 100%;
@@ -83,39 +90,12 @@ height: 100%;
      
 }
 
-#p3-back{
-    width:calc(40px + 0.5vw);
-    height: calc(40px + 0.5vw);
-    position: absolute;
-    background-color: rgba(0, 0, 255, 0.08);
-    border-radius: 50%;
-    display: none;
-    cursor: pointer;
-}
-
+ 
 #p3-item1-sub{
     
 }
 
-.arrow {
-    position: absolute;
-    top: 60%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    transform: rotate(90deg);
-    
-}
-
-.arrow span {
-    display: block;
-    width: calc(10px + 0.5vw);
-    height: calc(10px + 0.5vw);
-    border-bottom: 5px solid white;
-    border-right: 5px solid rgb(255, 255, 255);
-    transform: rotate(45deg);
-    margin: -10px;
-    
-} 
+ 
 
 
 .p3-item{
@@ -127,8 +107,8 @@ height: 100%;
 
 .p3-item img{
 
-    width: 50px;
-    height: 50px;
+    width: 10vw;
+    height: 10vw;
 }
 
 .p3-item p{

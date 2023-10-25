@@ -1507,7 +1507,7 @@ autoStart = isMiniature(); // used for nice miniature in CodePen
 console.log(window.innerWidth);
 let x = new Puzzle ( {img: img,
                       width: window.innerWidth,
-                      height: window.innerHeight,
+                      height: (window.innerHeight - 10),
                       idiv: "forPuzzle" });
 
 });
@@ -1529,6 +1529,8 @@ var imgId=0;
 
 
 var imgId_check = getParameterByName("imgId");
+
+console.log("getting, params>>> "+imgId);
 
 if(imgId_check){
 if (imgId_check!="") {
