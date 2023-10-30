@@ -5,42 +5,74 @@
     position: absolute;
     
     
-    background-color: rgba(255, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
 
-   
+    
     
      
     display: block;
     z-index: -5001;
     visibility: hidden;
-
+    opacity: 1;
    
     
 }
+
+#juego-puzzle-button-back{
+    position: absolute;
+    left: calc(100% - 50px);
+    top: 10px;
+    color: rgb(240, 248, 255);
+    background-color: #045968;
+    font-family: 'Caveat', bold;
+    font-weight:normal;
+    font-size:35px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    
+    
+}
+
+#juego-puzzle-button-back p{
+    margin: 0;
+    padding: 0;
+    left: 11px;
+    top: -7.5px;
+    position: inherit;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
 
 #framePuzzle{
 
 width: 100%;
 height: 100%;
  
-
+border: none;
 
 }
 
 
-#pagina3{
-    background-color: rgba(250, 235, 215, 0);
+#page_juego{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
 }
 
 
 @media only screen and (max-device-width: 640px) {
-#page3 {
+#page_juego {
     position: absolute;
     width: calc(100% - 20px);
     height: calc(100% - 20px);
   
 }
-.page3-sub{
+.pagep_juego-sub{
     display: none;
     width: calc(100% + 20px);
     height: calc(100% + 20px);
@@ -51,34 +83,34 @@ height: 100%;
 }
 
 @media only screen and (min-device-width: 641px) {
-    #page3 {
+    #page_juego {
         position: absolute;
         width: calc(100% - 20px);
         height: calc(100% - 20px);
       
     }
-    .page3-sub{
+    .pagep_juego-sub{
         display: none;
         width: 100%;
         height:100%;
-        background-color: rgba(127, 255, 212, 0);
+        background-color: rgb(127, 255, 212);
         margin: 0;
         top: 0;
     }
     }
 
-    #text-p3{
+    #text-p_juego{
         text-align: center;
         margin-top: 20px;
     }
 
-.p3-layout {
+.p_juego-layout {
     width: 100%;
     height: 100%;
 
     display: grid;
     grid:
-        "p2-item1 p2-item2 p2-item3" 1fr "p2-item4 p2-item5 p2-item6" 1fr "p2-item7 p2-item8 p2-item9" 1fr / 1fr 1fr 1fr;
+        "p_juego-item1 p_juego-item2 p_juego-item3" 1fr "p_juego-item4 p_juego-item5 p_juego-item6" 1fr "p_juego-item7 p_juego-item8 p_juego-item9" 1fr / 1fr 1fr 1fr;
     gap: 8px;
 
     justify-content: space-around;
@@ -91,67 +123,81 @@ height: 100%;
 }
 
  
-#p3-item1-sub{
+#p_juego-item1-sub{
     
 }
 
  
 
 
-.p3-item{
+.p_juego-item{
     justify-items: center;
     align-items: center;
     cursor: pointer;
     user-select: none;
+  
 }
 
-.p3-item img{
+.p_juego-item img{
 
     width: 10vw;
     height: 10vw;
+    border-radius: 10%;
+    transform: scale(0.8);
+   
 }
+.p_juego-item:hover {
+    /* Estilos para el hover del elemento img dentro de .p_juego-item */
+    opacity: 1; /* Cambia la opacidad cuando se pasa el ratón por encima */
+    transform: scale(1.4); /* Escala la imagen cuando se pasa el ratón por encima */
+    
+    border-radius: 20%;
+  /*  box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.358); /* Propiedad de sombra */
+  }
 
-.p3-item p{
+
+
+.p_juego-item p{
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
 }
-#p3-item1 {
-    grid-area: p2-item1;
+#p_juego-item1 {
+    grid-area: p_juego-item1;
     background-color: rgba(165, 42, 42, 0);
     
 }
 
 
-#p3-item2 {
-    grid-area: p2-item2;
+#p_juego-item2 {
+    grid-area: p_juego-item2;
 }
 
-#p3-item3 {
-    grid-area: p2-item3;
+#p_juego-item3 {
+    grid-area: p_juego-item3;
 }
 
-#p3-item4 {
-    grid-area: p2-item4;
+#p_juego-item4 {
+    grid-area: p_juego-item4;
 }
 
-#p3-item5 {
-    grid-area: p2-item5;
+#p_juego-item5 {
+    grid-area: p_juego-item5;
 }
 
-#p3-item6 {
-    grid-area: p2-item6;
+#p_juego-item6 {
+    grid-area: p_juego-item6;
 }
 
-#p3-item7 {
-    grid-area: p2-item7;
+#p_juego-item7 {
+    grid-area: p_juego-item7;
 }
 
-#p3-item8 {
-    grid-area: p2-item8;
+#p_juego-item8 {
+    grid-area: p_juego-item8;
 }
 
-#p3-item9 {
-    grid-area: p2-item9;
+#p_juego-item9 {
+    grid-area: p_juego-item9;
 }

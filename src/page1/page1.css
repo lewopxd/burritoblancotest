@@ -108,8 +108,13 @@
   
     #page1 {
       position: absolute;
-      width: calc(100% - 20px);
-      height: calc(100% - 20px);
+      width: calc(100% - 0px);
+      height: auto;
+      margin-left: 0;
+      margin-top: 0;
+      background-color: beige;
+      border-radius: 50px;
+ 
     }
     
       
@@ -128,9 +133,12 @@
           ". page1-parrafo page1-parrafo";
         grid-area: page1-container;
     
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
         overflow-x: hidden;
         overflow-y: auto;
+
+        justify-content: center;
+        align-items: top;
         
       }
       
@@ -151,6 +159,7 @@
       #page1-img1{
         width: 20vw;
         height: auto;
+        transform: scaleX(-1);
       }
       
  #page1-instaHolder{
@@ -180,6 +189,8 @@
       }
       .page1-parrafo { 
         grid-area: page1-parrafo; 
+        margin-right: 30px;
+        font-size: 16px;
         
       }
       #p1-scroll {
@@ -196,18 +207,18 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.155); 
+    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0); 
     border-radius: 2px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(153, 153, 153, 0.639); 
+    background: rgba(153, 153, 153, 0.162); 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(93, 92, 92, 0.785); 
+    background: rgba(93, 92, 92, 0); 
   }
 }

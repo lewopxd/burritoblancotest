@@ -10,7 +10,7 @@
 :root {
   --off-canvas: 50;
   --text-index: 40;
-  --front: 30;
+  --front: 999999;
   --middle-front: 25;
   --middle: 20;
   --middle-back: 15;
@@ -23,9 +23,9 @@
   --background-color: #0591aa;
   --principal-color: #045968;
 
-  --principal-page-color: #ecf9ffcc;
-  --secondary-page-color: rgba(255, 255, 255, 0);
-  --border-page-color: #045968;
+  --principal-page-color: #ffffff00;
+  --secondary-page-color: rgba(255, 187, 0, 0);
+  --border-page-color: #003d6500;
 
   --principal-mobile-page-color: #ecf9ff3c;
   --secondary-mobile-page-color: rgba(255, 255, 255, 0);
@@ -1123,8 +1123,9 @@ main {
     
     background-color: var(--principal-page-color);
     border-color: var(--border-page-color);
-    border-width: 2px;
+    border-width: 0px;
     border-style: dashed;
+     
     
     width: calc(60% - 10px);
     height: calc(100% - 10px);
@@ -1142,11 +1143,12 @@ main {
   @keyframes moveInLeft {
     from {
       left: calc(100% + var(--PaginaOffset));
-      background-color: var(--secondary-page-color);
+      opacity: 0;
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
-      background-color: var(--principal-page-color);
+      opacity: 1;
+      
     }
   }
 
@@ -1158,11 +1160,11 @@ main {
   @keyframes moveOutLeft {
     from {
       left: calc(0% + var(--PaginaOffset));
-      background-color: var(--principal-page-color);
+    opacity: 0;
     }
     to {
       left: calc(-100%); 
-      background-color: var(--secondary-page-color);
+     opacity: 1;
     }
   }
 
@@ -1172,11 +1174,11 @@ main {
   @keyframes moveInRight {
     from {
       left: calc(-100% );
-      background-color: var(--secondary-page-color);
+    opacity: 0;
     }
     to {
       left: calc(0% + var(--PaginaOffset)); 
-      background-color: var(--principal-page-color);
+      opacity: 1;
     }
   }
 
@@ -1186,11 +1188,11 @@ main {
   @keyframes moveOutRight {
     from {
       left: calc(0% + var(--PaginaOffset));
-      background-color: var(--principal-page-color);
+     opacity: 1;
     }
     to {
       left: calc(100% ); 
-      background-color: var(--secondary-page-color);
+      opacity: 0;
     }
   }
 

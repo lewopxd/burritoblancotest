@@ -704,7 +704,7 @@ on number of pieces
     this.menu = new Menu({
       parentDiv: this.divGame,
       idDivMenu: "divmenu",
-      title: "MENU",
+      title: "JUGAR",
       lineOffset: 30,
       lineStep: 30,
       lines: [
@@ -713,7 +713,7 @@ on number of pieces
         {text: "25 piezas", func: this.returnFunct(25)},
         {text: "50 piezas", func: this.returnFunct(50)},
         {text: "100 piezas", func: this.returnFunct(100)},
-        {text: "200 piezas  ", func: this.returnFunct(200)}
+        {text: "200 piezas  ", func: this.returnFunct(200)} 
       ]
     });
   }
@@ -948,7 +948,7 @@ Puzzle.prototype.removeAllListeners = function() {
 Puzzle.prototype.launchAnimation = function() {
 
   this.anim = {cpt: autoStart ? 200 : 100 };
-  this.anim.tmr = window.setInterval((function(puzz){return function(){puzz.animate()}})(this), 20);
+  this.anim.tmr = window.setInterval((function(puzz){return function(){puzz.animate()}})(this), 8);
 
 } // launchAnimation
 // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -   -
@@ -1529,6 +1529,8 @@ var imgId=0;
 
 
 var imgId_check = getParameterByName("imgId");
+var random = getParameterByName("random");
+
 
 console.log("getting, params>>> "+imgId);
 
@@ -1553,7 +1555,25 @@ if(valorVariable){
 
 console.log(valorVariable); // Esto imprimirá el valor de la variable CSS en la consola
 
-return valorVariable
+
+
+if(random=="true"){
+  const nUrlImages_Random = 7;
+  const nUrlImages_Randomv = 7;
+
+  if(window.innerWidth > 640){
+    const numeroAleatorio = Math.floor(Math.random() * nUrlImages_Random);
+   valorVariable = "./imgs/random/im_random"+numeroAleatorio+".jpg";
+    }else{
+      const numeroAleatorio = Math.floor(Math.random() * nUrlImages_Randomv);
+      valorVariable = "./imgs/randomv/im_random"+numeroAleatorio+"v.jpg";
+    }  
+
+}
+
+return valorVariable;
+
+
 
 }
 function getUrl(){
@@ -1561,6 +1581,7 @@ function getUrl(){
 
 
 var imgId_check = getParameterByName("imgId");
+var random = getParameterByName("random");
 
 if(imgId_check){
 if (imgId_check!="") {
@@ -1574,7 +1595,21 @@ const UrlImages = ["im0.jpg", "im1.jpg", "im2.jpg", "im3.jpg"];
 const UrlImagesv = ["im0v.jpg", "im1v.jpg", "im2v.jpg", "im3v.jpg"];
 var newUrl="";
 
+const UrlImages_Random = ["im_random1.jpg"]; 
+const UrlImages_Randomv = []; 
 
+console.log("value random = "+  random);
+ 
+  if(random=="true"){
+    if(window.innerWidth > 640){
+    const numeroAleatorio = Math.floor(Math.random() * UrlImages_Random.length);
+    newUrl = "./imgs/"+UrlImages_Random[numeroAleatorio];
+    }else{
+      newUrl = "./imgs/"+UrlImages_Randomv[numeroAleatorio];
+    }
+
+
+  }else{
  
 
 if (window.innerWidth <= 640) {
@@ -1592,6 +1627,8 @@ if (window.innerWidth <= 640) {
       newUrl = "./imgs/"+UrlImages[0];
     }
 }
+
+  }
 
 return newUrl;
 

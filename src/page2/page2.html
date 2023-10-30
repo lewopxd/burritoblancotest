@@ -9,23 +9,21 @@
     <section class="p2-layout" id="p2-layout">
 
         <div class="p2-item" id="p2-item1" onclick="p2_button(1)">
-            <img src="imagen1.jpg" alt="Imagen 1">
-            <p> Música</p>
-        </div>
-
-        <div class="p2-item" id="p2-item2" onclick="p2_button(2)">
-            <img src="imagen1.jpg" alt="Imagen 1">
+        <div id = p2-item1-img> </div>
             <p> Juega</p>
         </div>
 
-
-        <div class="p2-item" id="p2-item3" onclick="p2_button(3)">
-            <img src="imagen1.jpg" alt="Imagen 1">
-            <p> Audiolibro</p>
-
+        <div class="p2-item" id="p2-item2" onclick="p2_button(2)">
+            <div id = p2-item2-img> </div>
+            <p> Audio Libro </p>
         </div>
 
+        <div class="p2-item" id="p2-item3" onclick="p2_button(3)">
+            <div id = p2-item3-img> </div>
+            <p> Música </p>
+        </div>
 
+<!--
         <div class="p2-item" id="p2-item4" onclick="p2_button(4)">
 
             <img src="imagen1.jpg" alt="Imagen 1">
@@ -63,22 +61,22 @@
             <p> </p>
         </div>
 
-
+-->
     </section>
 
 
     <section class="page2-sub" id="p2-item1-sub">
-        <div w3-include-html="./page2/musica/page-musica.html"></div>
+        <div w3-include-html="./page2/juego/juego.html"></div> 
+      
     </section>
 
     <section class="page2-sub" id="p2-item2-sub">
-        <div w3-include-html="./page2/juego/juego.html"></div> 
-      
+       audiolibro
           
     </section>
 
     <section class="page2-sub" id="p2-item3-sub">
-        3
+        <div w3-include-html="./page2/musica/page-musica.html"></div>
     </section>
 
     <section class="page2-sub" id="p2-item4-sub">

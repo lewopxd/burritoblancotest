@@ -1,5 +1,6 @@
 #pagina2{
     background-color: rgba(250, 235, 215, 0);
+    justify-content: center;
 }
 
 
@@ -51,16 +52,16 @@
     align-content: space-around;
     background-color: rgba(0, 0, 255, 0);
 
-    justify-items: center;
+    justify-items: center;  
     align-items: center;
      
 }
 
 #p2-back{
-    width:calc(40px + 0.5vw);
-    height: calc(40px + 0.5vw);
+    width:calc(30px + 0.5vw);
+    height: calc(30px + 0.5vw);
     position: absolute;
-    background-color: rgba(0, 0, 255, 0.183);
+    background-color:var(--principal-color);
     border-radius: 50%;
     display: none;
     cursor: pointer;
@@ -82,12 +83,12 @@
 
 .arrow span {
     display: block;
-    width: calc(10px + 0.5vw);
-    height: calc(10px + 0.5vw);
+    width: calc(7px + 0.5vw);
+    height: calc(7px + 0.5vw);
     border-bottom: 5px solid white;
     border-right: 5px solid rgb(255, 255, 255);
     transform: rotate(45deg);
-    margin: -10px;
+    margin: -8px;
     
 } 
 
@@ -107,16 +108,56 @@
 #p2-item1 {
     grid-area: p2-item1;
     background-color: rgba(165, 42, 42, 0);
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(165, 42, 42, 0);
     
+}
+
+#p2-item1-img{
+    background-color: rgba(0, 0, 255, 0);
+    background-image: var(--icon-juega);
+   width: 5vw;
+   height: 5vw;
+   background-repeat: no-repeat;
+   background-size: 100%;
+background-position: center;
+    
+
+
 }
 
 
 #p2-item2 {
     grid-area: p2-item2;
 }
+#p2-item2-img{
+    background-color: rgba(0, 0, 255, 0);
+    background-image: var(--icon-audiolibro);
+   width: 5vw;
+   height: 5vw;
+   background-repeat: no-repeat;
+   background-size: 100%;
+background-position: center;
+    
+
+
+}
 
 #p2-item3 {
     grid-area: p2-item3;
+}
+#p2-item3-img{
+    background-color: rgba(0, 0, 255, 0);
+    background-image: var(--icon-musica);
+   width: 5vw;
+   height: 5vw;
+   background-repeat: no-repeat;
+   background-size: 100%;
+background-position: center;
+    
+
+
 }
 
 #p2-item4 {

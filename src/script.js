@@ -131,6 +131,8 @@ function click_item_2() {
   manageIndex(index_item);
 
 
+  document.getElementById("p2-back").click();
+
 }
 
 
