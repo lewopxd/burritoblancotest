@@ -2,8 +2,9 @@
   @media only screen and (max-device-width: 640px) {
     #page1 {
       position: absolute;
-      width: calc(100% - 20px);
-      height: calc(100% - 20px);
+      width: calc(100% - 0px);
+      height: calc(100% - 0px);
+      background-color: rgba(0, 255, 255, 0);
     }
 
     #p1-scroll {

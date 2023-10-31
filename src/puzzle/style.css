@@ -1,95 +1,214 @@
 body {
-      width: 100vw;
-      height: calc(100vh - 10px);    
-      padding:0;
-      border: none;
-      position: fixed;
-      background-color: #ffffff00;
-    }
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  border: none;
+  position: fixed;
+  background-color: #ffffff00;
+}
+ 
 
 
 
-    #puzzleHandler{
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.644);      
-      border-color: #04596800;
-      border-width: 1px;
-      border-style: solid;
-      width: 100%;
-      height: 100%; 
-     
-      
-    
-    }
-   
+#preloader {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
 
-    #forPuzzle {
-      
-      border:none;
-      left:0px;
-      top:0px;
-      
+  height: 100vh;
+  width: 100vw;
+  /* Ocupa toda la altura de la pantalla */
+  background-color: #1eff0000;
+  /* Cambia el color de fondo según tu preferencia */
+}
 
-    }
-    #divmenu {
-      position:absolute;
-      top:5px;
-      left:15px;
-      width:0px;
-      height:0px;
-      cursor:default;
-      z-index:50001;
-      border-radius:5px;
-    }
-    #divmenu.open {
-      width:120px;
-      height:120px;
-      background-color:rgba(255, 255, 255, 0.963);
-      z-index:50001;
-    }
+#preloader-container {
+  width: 200px;
+  position: absolute;
 
-    #divmenu .title {
-      font-family: 'Caveat', cursive;
-      font-weight:normal;
-      font-size:19px;
-      width: 60px;
-      position:absolute;
-      top:0px;
-      left:20px;
-      color:#ffffff;
-      background-color:#045968;
-      padding:5px;
-      border-radius:3px;
-      text-align: center;
-       margin-bottom:5px ;
-       cursor: pointer;
-    }
+  align-items: center;
 
-    #divmenu .line {
-    	font-family: sans-serif;
-      font-weight:normal;
-      font-size:15px;
-      text-align:center;
-      position:absolute;
-      width:100px;
-      left:5px;
-      color:#045968;
-      padding:5px;
-      display:none;
-      border-radius:5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
+  background-color: #045968;
 
-    #divmenu.open .line {
-      display:block;
-    }
-    #divmenu.open .line:hover {
-      background-color: rgb(255, 255, 255);
-      border-color: #045968;
-      border-style: dashed;
-      border-width: 1px;
+}
+.circle-loader {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #045968;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle-loader .5s alternate infinite ease;
+}
 
-      
-      cursor:pointer;
-    }
+@keyframes circle-loader {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle-loader:nth-child(2) {
+  left: 45%;
+  animation-delay: .2s;
+}
+
+.circle-loader:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+.shadow-loader {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow-loader {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}
+
+.shadow-loader:nth-child(4) {
+  left: 45%;
+  animation-delay: .2s
+}
+
+.shadow-loader:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+#preloader span {
+  position: absolute;
+  top: 75px;
+
+  font-size: 20px;
+  letter-spacing: 12px;
+  color: #045968;
+  left: 15%;
+}
+
+#puzzleHandler {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.653);
+  border-color: #04596800;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+
+}
+
+
+#forPuzzle {
+
+  border: none;
+  left: 0px;
+  top: 0px;
+
+
+}
+
+#divmenu {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 0px;
+  height: 0px;
+  cursor: default;
+  z-index: 50001;
+  border-radius: 5px;
+}
+
+#divmenu.open {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.963);
+  z-index: 50001;
+}
+
+#divmenu .title {
+  font-family: 'Caveat', cursive;
+  font-weight: normal;
+  font-size: 19px;
+  width: 60px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  color: #ffffff;
+  background-color: #045968;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#divmenu .line {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  width: 100px;
+  left: 5px;
+  color: #045968;
+  padding: 5px;
+  display: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#divmenu.open .line {
+  display: block;
+}
+
+#divmenu.open .line:hover {
+  background-color: rgb(255, 255, 255);
+  border-color: #045968;
+  border-style: dashed;
+  border-width: 1px;
+
+
+  cursor: pointer;
+}

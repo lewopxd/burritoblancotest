@@ -1,6 +1,10 @@
 "use strict";
 
   let autoStart;
+  var puzzlex = null;
+  var  img  = null;
+  var  p_imageloaded=false;
+
   const mrandom = Math.random,
         mfloor = Math.floor,
         mhypot = Math.hypot;
@@ -10,6 +14,60 @@ var audiowin = new Audio('./music/winner.mp3');
 import CanvasConfetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/+esm';
 
         
+
+//----------------------------------------------------------------
+//             preloader
+
+
+window.addEventListener('load', function () {
+
+     startPuzzle();
+  // Se ejecuta cuando todos los recursos (imágenes, estilos, etc.) han cargado completamente
+
+ // Llama a la función para iniciar la espera
+//esperarHastaQueXNoSeaNull();
+ 
+ 
+
+  
+  // Espera 2 segundos antes de mostrar el contenido
+  /*
+  setTimeout(function () {
+    // Oculta el preloader
+  var preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+    var content = document.getElementById('puzzleHandler');
+    content.style.opacity = '1';
+  }, 1000); // 2000 milisegundos = 2 segundos
+
+
+*/
+});
+
+
+function esperarHastaQueXNoSeaNull() {
+  
+   const interval = setInterval(() => {
+    if (p_imageloaded===false)  {
+      clearInterval(interval); // Detener el intervalo
+      callback_p(); // Llamar a la función de callback cuando x ya no sea null
+    }
+    console.log("wait");
+
+  }, 500); // Intervalo de 100ms
+}
+
+
+
+function callback_p(){
+
+  var preloader = document.getElementById('preloader');
+  preloader.style.display = 'none';
+  var content = document.getElementById('puzzleHandler');
+  content.style.opacity = '1';
+ 
+
+}
 
 //-----------------------------------------------------------------------------
 function isMiniature() {
@@ -610,7 +668,10 @@ function Puzzle(params) {
     this.image = new Image();
     this.image.src = params.img;
     this.image.addEventListener("load", (function(obj){
+     
       return function() {
+        p_imageloaded=true;
+        callback_p();
         obj.createPuzzle(params);
       }})(this));
   } else {
@@ -1503,23 +1564,24 @@ function lookForLoops (tbCases) {
 
 //---------------------------------------------------------------------------- -
 
-window.addEventListener("load", function(){
-
- 
+function startPuzzle(){ 
 
 
-let img = geturl2();
+ img = geturl2();
 
-autoStart = isMiniature(); // used for nice miniature in CodePen
+//autoStart = isMiniature(); // used for nice miniature in CodePen
 
 
 console.log(window.innerWidth);
-let x = new Puzzle ( {img: img,
+  puzzlex = new Puzzle ( {img: img,
                       width: window.innerWidth,
                       height: (window.innerHeight - 10),
                       idiv: "forPuzzle" });
 
-});
+                      console.log("x:  "+puzzlex);
+
+}
+
 
 
 

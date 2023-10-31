@@ -37,8 +37,9 @@ const buttonMute = document.getElementById("button-audio");
 const signal = document.getElementById("audio-signal");
 
 const activeAudio = () => {
+  
   reproducirCancionAleatoria();
-  signal.remove();
+
 };
 
 
@@ -61,6 +62,7 @@ reproducirCancionAleatoria();
 
 
 buttonMute.addEventListener("click", () => {
+  signal.remove();
   if (music.currentTime === 0) activeAudio();
   else music.muted = !music.muted;
   buttonMute.classList[music.muted ? "add" : "remove"]("muted");
