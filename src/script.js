@@ -6,7 +6,7 @@ let currentPosition3 = 0;
 let currentPosition2 = 0;
 let currentPosition1 = 0;
 
- 
+
 
 var index_item = 0;
 var last_index_item = 0;

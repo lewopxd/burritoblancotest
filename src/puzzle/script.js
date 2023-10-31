@@ -4,6 +4,13 @@
   const mrandom = Math.random,
         mfloor = Math.floor,
         mhypot = Math.hypot;
+
+var audiowin = new Audio('./music/winner.mp3');
+
+import CanvasConfetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/+esm';
+
+        
+
 //-----------------------------------------------------------------------------
 function isMiniature() {
 return location.pathname.includes('/fullcpgrid/');
@@ -1173,6 +1180,8 @@ Puzzle.prototype.mouseUpGame = function(event) {
 
 // YES ! tell the player
   this.removeAllListeners();
+  win();
+
 // normal image is re-drawn
   let ctx = this.canvMobile.getContext("2d");
   ctx.drawImage(this.image,
@@ -1524,6 +1533,7 @@ function getParameterByName(name) {
 
 function geturl2(){
 
+ 
 //obten el id de la url : imgId
 var imgId=0;
 
@@ -1576,6 +1586,8 @@ return valorVariable;
 
 
 }
+
+/*
 function getUrl(){
   var imgId=0;
 
@@ -1631,5 +1643,26 @@ if (window.innerWidth <= 640) {
   }
 
 return newUrl;
+
+}
+
+
+
+ 
+
+ */
+
+
+function win(){
+   //CanvasConfetti
+
+   audiowin.play();
+   CanvasConfetti({
+    zIndex: 999999,
+    particleCount: 90,
+    spread: 50
+    // any other options from the global
+    // confetti function
+  });
 
 }
