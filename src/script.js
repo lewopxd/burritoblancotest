@@ -30,18 +30,36 @@ window.addEventListener('load', function () {
 
 
 let counter = 0;
-const timer = setInterval(() => {
-  counter += 1;
-}, 200);
-const music = document.getElementById("music");
+var canciones = ['./music/borriquito0.mp3', './music/borriquito1.mp3'];
+
+var music = document.getElementById("music");
 const buttonMute = document.getElementById("button-audio");
 const signal = document.getElementById("audio-signal");
+
 const activeAudio = () => {
-  music.play();
-  music.currentTime = counter / 5;
-  clearInterval(timer);
+  reproducirCancionAleatoria();
   signal.remove();
 };
+
+
+
+function reproducirCancionAleatoria() {
+  var urlAleatoria = canciones[Math.floor(Math.random() * canciones.length)];
+   music = new Audio(urlAleatoria);
+  if(urlAleatoria==0){
+    music.volume = 0.004;
+  }else{
+   music.volume = 0.1;
+  }
+ 
+  music.addEventListener('ended', reproducirCancionAleatoria); // Cuando termine la canción, reproducir otra al azar
+  music.play();
+}
+
+// Iniciar la reproducción de la primera canción al azar
+reproducirCancionAleatoria();
+
+
 buttonMute.addEventListener("click", () => {
   if (music.currentTime === 0) activeAudio();
   else music.muted = !music.muted;
