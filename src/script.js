@@ -22,6 +22,9 @@ window.addEventListener('load', function () {
     preloader.style.display = 'none';
     var content = document.getElementById('content');
     content.style.display = 'block';
+
+    slide();
+
   }, 10); // 2000 milisegundos = 2 segundos
 });
 
@@ -37,8 +40,9 @@ const buttonMute = document.getElementById("button-audio");
 const signal = document.getElementById("audio-signal");
 
 const activeAudio = () => {
-  
+   
   reproducirCancionAleatoria();
+  
 
 };
 
@@ -53,8 +57,12 @@ function reproducirCancionAleatoria() {
    music.volume = 0.1;
   }
  
+  try{
   music.addEventListener('ended', reproducirCancionAleatoria); // Cuando termine la canción, reproducir otra al azar
   music.play();
+}catch(e){
+
+}
 }
 
 // Iniciar la reproducción de la primera canción al azar
@@ -510,3 +518,4 @@ function includeHTML() {
 };
 
 
+    

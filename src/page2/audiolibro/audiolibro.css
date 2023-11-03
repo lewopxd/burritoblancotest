@@ -1,0 +1,17 @@
+#audiolibro-page {
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+#audiolibro-page-holder {
+    width: 100%; /* Toma el 100% del ancho del padre */
+    height: calc(70vh); /* Toma el 100% de la altura del padre */
+    margin: 20px;
+    margin-top: 20px;
+    background-color: aqua;
+}
