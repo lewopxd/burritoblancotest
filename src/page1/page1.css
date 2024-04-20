@@ -36,8 +36,8 @@
       gap: 0px 0px;
       grid-auto-flow: row;
       grid-template-areas:
-        "page1-encaba page1-encaba page1-encaba"
         ". page1-imagen1 ."
+        "page1-encaba page1-encaba page1-encaba"
         ". page1-parrafo .";
       grid-area: page1-container;
       justify-items: center;
@@ -87,8 +87,9 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-
-
+      border: 0.5px solid #fff; /* Borde blanco de menos de 0.5px */
+      border-radius: 10px; /* Borde redondeado */
+      padding: 5px; /* Margen interno de 5px */
     }
 
     #page1-instagram {
@@ -108,7 +109,11 @@
 
     .page1-parrafo {
       grid-area: page1-parrafo;
+     
+    }
 
+    #page1-parrafo-texto::first-letter {
+      text-transform: capitalize;
     }
 
   }
